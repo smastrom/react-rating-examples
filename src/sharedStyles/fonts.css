@@ -1,0 +1,23 @@
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: url('https://www.datocms-assets.com/56068/1655460769-source-sans-pro-v21-latin-600.woff2')
+    format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 700;
+  src: url('https://www.datocms-assets.com/56068/1655361699-source-sans-pro-v21-latin-700.woff2')
+    format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Fira Code';
+  src: url('https://www.datocms-assets.com/56068/1655364498-fira-code-v21-latin-600.woff2')
+    format('woff2');
+}
