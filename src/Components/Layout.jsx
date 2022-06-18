@@ -7,24 +7,25 @@ import { Main } from './Main';
 import { Sidebar } from './Sidebar';
 
 const Container = styled('div')`
-  --padding: 30px;
   background-color: var(--background-color);
   padding: 15px 5px 15px 15px;
-  max-width: 1536px;
-  width: auto;
+  height: calc(100vh - 30px);
+  max-width: 1920px;
+  width: 100%;
   min-height: 600px;
-  max-height: 2000px;
+  max-height: 2160px; /* To do: remove paddings from total */
   margin: auto;
-  height: calc(100vh - calc(var(--padding) * 2));
+
   display: flex;
   gap: 30px;
 
   @media (min-width: 768px) {
     padding: 30px 5px 30px 30px;
+    height: calc(100vh - 60px);
   }
 
   @media (min-width: 1536px) {
-    padding: var(--padding);
+    padding: 30px;
   }
 `;
 
@@ -36,6 +37,7 @@ export const Layout = () => {
       {!isMobile && (
         <Sidebar intersectionId={intersectionId} setIntersectionId={setIntersectionId} />
       )}
+
       <Main setIntersectionId={setIntersectionId} />
     </Container>
   );

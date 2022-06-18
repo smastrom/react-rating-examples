@@ -22,6 +22,11 @@ export const GlobalStyles = createGlobalStyles`
       border-color: currentColor;
     }
 
+    #root {
+      display: flex;
+      height: 100vh;
+    }
+
     html {
       background-color: var(--background-color);
       -webkit-font-smoothing: antialiased;
@@ -70,7 +75,7 @@ export const GlobalStyles = createGlobalStyles`
     }
 
     small {
-      font-size: 80%;
+      font-size: 0.875rem;
     }
 
     sub,

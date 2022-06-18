@@ -11,19 +11,27 @@ const Container = styled('section', forwardRef)`
   padding: 15px;
   display: flex;
   gap: 40px;
+  position: relative;
   flex-direction: column;
 
   @media (min-width: 768px) {
     padding: 20px;
   }
+
+  &:last-of-type {
+    z-index: 10;
+    margin-bottom: 0;
+  }
 `;
 
 const Title = styled('h1')`
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   font-weight: 700;
+  text-align: center;
 
   @media (min-width: 768px) {
     font-size: 1.375rem;
+    text-align: inherit;
   }
 `;
 

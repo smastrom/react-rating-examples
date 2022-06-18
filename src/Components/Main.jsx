@@ -9,6 +9,81 @@ import { isMobile } from 'react-device-detect';
 import { useHashLocation } from '../hooks/useHashLocation';
 import { examples } from '../Examples/List';
 import { Example } from './Example';
+import { Logo } from './Logo';
+import { GitHubIcon, githubLinkProps } from './GitHubIcon';
+
+const Footer = styled('footer')`
+  display: flex;
+  justify-content: space-between;
+  z-index: 10;
+  position: relative;
+  padding: 30px 10px 10px 10px;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+`;
+
+const sharedShadowStyles = `
+  overflow: hidden;
+  position: fixed;
+  content: '';
+  width: 100%;
+  z-index: 5;
+  display: block;
+  height: 60px;
+`;
+
+const HeaderContent = styled('div')`
+  padding: 20px 10px 10px 10px;
+  background: var(--background-color);
+  display: flex;
+  justify-content: space-between;
+`;
+
+const HeaderGradient = styled('span')`
+  height: 30px;
+  display: flex;
+  background: linear-gradient(
+    to top,
+    var(--transparent-color) 25%,
+    var(--background-color) 75%
+  );
+`;
+
+const MobileHeader = styled('header')`
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  align-items: center;
+
+  gap: 20px;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+
+  & svg {
+    width: auto;
+    height: auto;
+
+    @media (min-width: 325px) {
+      &:first-of-type {
+        width: 200px;
+      }
+    }
+  }
+
+  & a svg {
+    @media (min-width: 325px) {
+      &:last-of-type {
+        width: 40px;
+      }
+    }
+  }
+`;
 
 const Container = styled('main')`
   width: 100%;
@@ -16,6 +91,7 @@ const Container = styled('main')`
   overflow-y: scroll;
   scroll-behavior: smooth;
   scrollbar-color: #d1d5db var(--transparent-color);
+  position: relative;
 
   &::-webkit-scrollbar {
     width: 8px;
@@ -34,9 +110,20 @@ const Container = styled('main')`
   @media (min-width: 768px) {
     padding-right: 15px;
   }
+
+  &::after {
+    ${sharedShadowStyles};
+    bottom: 15px;
+    background: linear-gradient(to bottom, var(--transparent-color) 25%, #f3f4f6 75%);
+
+    @media (min-width: 768px) {
+      bottom: 30px;
+    }
+  }
 `;
 
 export const Main = ({ setIntersectionId }) => {
+  const isInitialMount = useRef(true);
   const sectionRefs = useRef([]);
   const observerRef = useRef(null);
 
@@ -82,26 +169,41 @@ export const Main = ({ setIntersectionId }) => {
 
   useDebounceEffect(
     () => {
+      if (isInitialMount.current) {
+        isInitialMount.current = false;
+        return;
+      }
       if (!isMobile && typeof intersectionsObj === 'object') {
         const findId =
+          Object.entries &&
           // eslint-disable-next-line no-unused-vars
-          Object.entries && Object.entries(intersectionsObj).find(([_, value]) => value);
+          Object.entries(intersectionsObj).find(([_, isIntersecting]) => isIntersecting);
         if (findId) {
           const newSectionId = findId[0];
-          setIntersectionId(newSectionId);
 
           if (location !== newSectionId) {
             history.replaceState(null, '', `#${newSectionId}`);
           }
+
+          setIntersectionId(newSectionId);
         }
       }
     },
     [intersectionsObj],
-    { wait: 100 }
+    { wait: 120 }
   );
 
   return (
     <Container id="examples">
+      <MobileHeader>
+        <HeaderContent>
+          <Logo />
+          <a {...githubLinkProps}>
+            <GitHubIcon />
+          </a>
+        </HeaderContent>
+        <HeaderGradient />
+      </MobileHeader>
       {examples.map(({ id, title, code, jsx }, index) => (
         <Example
           key={id}
@@ -113,6 +215,10 @@ export const Main = ({ setIntersectionId }) => {
           jsx={jsx}
         />
       ))}
+      <Footer>
+        <small>MIT Licensed</small>
+        <small>© 2022 Simone Mastromattei</small>
+      </Footer>
     </Container>
   );
 };

@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "ahooks": "^3.5.0",
+    "esbuild": "^0.14.45",
     "goober": "^2.1.9",
     "prettier": "^2.7.0",
     "prismjs": "^1.28.0",
@@ -17,6 +18,9 @@
     "react-device-detect": "^2.2.2",
     "react-dom": "^18.2.0",
     "vite-plugin-prismjs": "^0.0.8"
+  },
+  "resolutions": {
+    "esbuild": "0.14.45"
   },
   "devDependencies": {
     "@types/react": "^18.0.0",
