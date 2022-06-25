@@ -1,43 +1,55 @@
-/* eslint-disable no-restricted-globals */
-import { useLayoutEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 
 import { styled } from 'goober';
 import Prism from 'prismjs';
-import { useDebounceEffect, useMount, useUnmount } from 'ahooks';
-import { isMobile } from 'react-device-detect';
+import { useDebounceEffect } from 'ahooks';
+import orderBy from 'lodash.orderby';
+import round from 'lodash.round';
+import { isFirefox, isMobile } from 'react-device-detect';
 
-import { useHashLocation } from '../hooks/useHashLocation';
 import { examples } from '../Examples/List';
 import { Example } from './Example';
 import { Logo } from './Logo';
 import { GitHubIcon, githubLinkProps } from './GitHubIcon';
 
-const Footer = styled('footer')`
-  display: flex;
-  justify-content: space-between;
-  z-index: 10;
-  position: relative;
-  padding: 30px 10px 10px 10px;
-  flex-wrap: wrap;
-  gap: 10px;
+const getThresholds = (length, maxNumber) =>
+  Array.from({ length }, (_, index) => ((index * maxNumber) / (length - 1)).toFixed(2));
+
+const thresholds = getThresholds(25, 1);
+
+const MobileHeader = styled('header')`
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  align-items: center;
+  gap: 20px;
 
   @media (min-width: 768px) {
     display: none;
   }
-`;
 
-const sharedShadowStyles = `
-  overflow: hidden;
-  position: fixed;
-  content: '';
-  width: 100%;
-  z-index: 5;
-  display: block;
-  height: 60px;
+  & svg {
+    width: auto;
+    height: auto;
+
+    @media (min-width: 325px) {
+      &:first-of-type {
+        width: 180px;
+      }
+    }
+  }
+
+  & a svg {
+    @media (min-width: 325px) {
+      &:last-of-type {
+        width: 35px;
+      }
+    }
+  }
 `;
 
 const HeaderContent = styled('div')`
-  padding: 20px 10px 10px 10px;
+  padding: 10px;
   background: var(--background-color);
   display: flex;
   justify-content: space-between;
@@ -53,44 +65,12 @@ const HeaderGradient = styled('span')`
   );
 `;
 
-const MobileHeader = styled('header')`
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  align-items: center;
-
-  gap: 20px;
-
-  @media (min-width: 768px) {
-    display: none;
-  }
-
-  & svg {
-    width: auto;
-    height: auto;
-
-    @media (min-width: 325px) {
-      &:first-of-type {
-        width: 200px;
-      }
-    }
-  }
-
-  & a svg {
-    @media (min-width: 325px) {
-      &:last-of-type {
-        width: 40px;
-      }
-    }
-  }
-`;
-
 const Container = styled('main')`
   width: 100%;
-  padding-right: 5px;
+  padding-right: 7.5px;
   overflow-y: scroll;
   scroll-behavior: smooth;
-  scrollbar-color: #d1d5db var(--transparent-color);
+  scrollbar-color: var(--scrollbar-color) var(--transparent-color);
   position: relative;
 
   &::-webkit-scrollbar {
@@ -100,7 +80,7 @@ const Container = styled('main')`
 
   &::-webkit-scrollbar-thumb {
     border-radius: 8px;
-    background: #d1d5db;
+    background: var(--scrollbar-color);
   }
 
   &::-webkit-scrollbar-track {
@@ -112,7 +92,13 @@ const Container = styled('main')`
   }
 
   &::after {
-    ${sharedShadowStyles};
+    overflow: hidden;
+    position: fixed;
+    content: '';
+    width: 100%;
+    z-index: 5;
+    display: block;
+    height: 60px;
     bottom: 15px;
     background: linear-gradient(to bottom, var(--transparent-color) 25%, #f3f4f6 75%);
 
@@ -122,75 +108,114 @@ const Container = styled('main')`
   }
 `;
 
-export const Main = ({ setIntersectionId }) => {
+const Footer = styled('footer')`
+  display: flex;
+  justify-content: space-between;
+  z-index: 10;
+  position: relative;
+  padding: 30px 10px 10px 10px;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+`;
+
+const debounceDelay = isFirefox ? 180 : 100;
+
+export const Main = ({ setIntersectionData }) => {
   const isInitialMount = useRef(true);
+
   const sectionRefs = useRef([]);
   const observerRef = useRef(null);
-
-  const [location] = useHashLocation();
 
   const [intersectionsMap, setIntersectionsMap] = useState(() => {
     if (!isMobile) {
       const map = new Map();
-      examples.forEach(({ id }) => map.set(id, false));
+      examples.forEach(({ id }, index) =>
+        map.set(id, {
+          index,
+          id,
+          isIntersecting: false,
+          intersectionRatio: 0,
+        })
+      );
       return map;
     }
-    return {};
   });
 
-  const [intersectionsObj, setIntersectionsObj] = useState(undefined);
+  const [intersectionsArr, setIntersectionArr] = useState(undefined);
 
   useLayoutEffect(() => {
     Prism.highlightAll();
   }, []);
 
-  useMount(() => {
+  useEffect(() => {
     if (!isMobile) {
+      console.log('Hello from Intersection Observer @ Main.jsx');
+
       const intersectionCallback = (entries) => {
-        entries.forEach((entry) => {
-          setIntersectionsMap((prevMap) => prevMap.set(entry.target.id, entry.isIntersecting));
-          setIntersectionsObj(Object.fromEntries(intersectionsMap));
+        entries.forEach(({ target: { id }, isIntersecting, intersectionRatio }) => {
+          setIntersectionsMap((prevMap) =>
+            prevMap.set(id, {
+              index: prevMap.get(id).index,
+              id,
+              isIntersecting,
+              intersectionRatio: round(intersectionRatio, 1),
+            })
+          );
+
+          const sortedArr = orderBy(
+            Array.from(intersectionsMap.values()),
+            ['isIntersecting', 'intersectionRatio', 'index'],
+            ['desc', 'desc', 'asc']
+          );
+          setIntersectionArr(sortedArr);
         });
       };
 
       observerRef.current = new IntersectionObserver(intersectionCallback, {
         root: document.getElementById('examples'),
-        threshold: [0.5, 0.75, 1],
-        rootMargin: '0px 0px 0px 0px',
+        threshold: thresholds,
       });
 
       sectionRefs.current.forEach((sectionElement) => {
         observerRef.current.observe(sectionElement);
       });
-    }
-  });
 
-  useUnmount(() => (!isMobile ? observerRef.current.disconnect() : {}));
+      return () => {
+        observerRef.current.disconnect();
+      };
+    }
+  }, [intersectionsMap]);
 
   useDebounceEffect(
     () => {
-      if (isInitialMount.current) {
-        isInitialMount.current = false;
-        return;
-      }
-      if (!isMobile && typeof intersectionsObj === 'object') {
-        const findId =
-          Object.entries &&
-          // eslint-disable-next-line no-unused-vars
-          Object.entries(intersectionsObj).find(([_, isIntersecting]) => isIntersecting);
-        if (findId) {
-          const newSectionId = findId[0];
+      if (!isMobile) {
+        if (isInitialMount.current) {
+          console.log('Hello from debounceEffect @ Main.jsx, initial mount, skipping effect');
+          isInitialMount.current = false;
+          return;
+        }
 
-          if (location !== newSectionId) {
-            history.replaceState(null, '', `#${newSectionId}`);
+        if (typeof intersectionsArr !== 'undefined') {
+          console.log('Hello from debounceEffect @ Main.jsx, setting new id');
+          const [{ id: mostVisibileId, index }] = intersectionsArr;
+          if (mostVisibileId) {
+            setIntersectionData({ id: mostVisibileId, title: examples[index].title });
+
+            if (mostVisibileId !== examples[0].id) {
+              console.log('Hello from replaceState @ Main.jsx');
+              // eslint-disable-next-line no-restricted-globals
+              history.replaceState(null, '', `#${mostVisibileId}`);
+            }
           }
-
-          setIntersectionId(newSectionId);
         }
       }
     },
-    [intersectionsObj],
-    { wait: 120 }
+    [intersectionsArr],
+    { wait: debounceDelay }
   );
 
   return (

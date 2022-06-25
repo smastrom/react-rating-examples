@@ -1,6 +1,4 @@
-import { useState } from 'react';
-
-import { useMount, useUpdateEffect } from 'ahooks';
+import { useTitle, useUpdateEffect as useUpdateScroll } from 'ahooks';
 import { styled } from 'goober';
 
 import { useHashLocation } from '../hooks/useHashLocation';
@@ -12,7 +10,6 @@ const Container = styled('aside')`
   border-radius: 20px;
   background-color: white;
   border: 2px solid var(--border-color);
-  height: calc(100% - 40px);
   gap: 15px;
   width: 350px;
   flex-direction: column;
@@ -32,7 +29,7 @@ const Container = styled('aside')`
 const Nav = styled('nav')`
   overflow-y: scroll;
   scroll-behavior: smooth;
-  scrollbar-color: #d1d5db var(--transparent-color);
+  scrollbar-color: var(--scrollbar-color) var(--transparent-color);
   position: relative;
 
   &::after {
@@ -54,7 +51,7 @@ const Nav = styled('nav')`
   &::-webkit-scrollbar-thumb {
     border-radius: 8px;
     border: 6px solid white;
-    background: #d1d5db;
+    background: var(--scrollbar-color);
   }
 
   &::-webkit-scrollbar-track {
@@ -69,7 +66,7 @@ const NavList = styled('ul')`
 
 const NavLink = styled('a')`
   white-space: break-spaces;
-  padding: 10px 20px;
+  padding: 10px 20px 10px 15px;
   position: relative;
   display: flex;
   line-height: 1.25;
@@ -101,7 +98,7 @@ const Header = styled('div')`
 
     & svg {
       transition: fill 200ms ease-out;
-      fill: black;
+      fill: var(--foreground-color);
       width: 30px;
       height: 30px;
     }
@@ -122,26 +119,24 @@ const Footer = styled('div')`
   flex-direction: column;
 `;
 
-export const Sidebar = ({ intersectionId, setIntersectionId }) => {
+export const Sidebar = ({ intersectionData }) => {
   const [location] = useHashLocation();
-  const [prevIntersectionId, setPrevIntersectionId] = useState('');
 
-  useMount(() => setIntersectionId(location === '/' ? examples[0].id : location));
+  useTitle(`${intersectionData.title} — React Advanced Rating`, { restoreOnUnmount: true });
 
-  useUpdateEffect(() => {
-    if (prevIntersectionId.length > 1 && location === '/') {
+  useUpdateScroll(() => {
+    console.log('Hello from useUpdateScroll @ Sidebar.jsx');
+
+    if (location === '/') {
       const firstElement = document.getElementById(examples[0].id);
       return firstElement.scrollIntoView({ behavior: 'smooth' });
     }
 
     const targetElement = document.getElementById(location);
-
     if (targetElement) {
-      console.log('I am triggering from update, Sidebar.jsx');
       targetElement.scrollIntoView({ behavior: 'smooth' });
-      setPrevIntersectionId(location);
     }
-  }, [location, prevIntersectionId.length, setPrevIntersectionId]);
+  }, [location]);
 
   return (
     <Container>
@@ -157,8 +152,8 @@ export const Sidebar = ({ intersectionId, setIntersectionId }) => {
             <li key={id}>
               <NavLink
                 href={`#${id}`}
-                isIntersecting={intersectionId === id}
-                aria-current={intersectionId === id}
+                isIntersecting={intersectionData.id === id}
+                aria-current={intersectionData.id === id}
               >
                 {title}
               </NavLink>

@@ -1,12 +1,17 @@
 import { useState } from 'react';
 import { styled } from 'goober';
 
-export const CodeContainer = styled('div')`
-  max-height: 500px;
-  overflow-y: auto;
-  overflow-x: auto;
+const Wrapper = styled('div')`
+  position: relative;
+  overflow: hidden;
+`;
+
+const Container = styled('div')`
+  max-height: 700px;
+  min-height: 300px;
+  overflow: auto;
   scroll-behavior: smooth;
-  scrollbar-color: #d1d5db var(--transparent-color);
+  scrollbar-color: var(--scrollbar-color) var(--transparent-color);
   background: hsl(230, 1%, 98%);
   padding-right: 15px;
   position: relative;
@@ -21,7 +26,7 @@ export const CodeContainer = styled('div')`
   &::-webkit-scrollbar-thumb {
     border-radius: 8px;
     border: 6px solid hsl(230, 1%, 98%);
-    background: #d1d5db;
+    background: var(--scrollbar-color);
   }
 
   &::-webkit-scrollbar-track {
@@ -30,27 +35,27 @@ export const CodeContainer = styled('div')`
 `;
 
 const CopyButton = styled('button')`
+  background-color: hsl(230, 1%, 98%);
   position: absolute;
   right: 10px;
   top: 10px;
   aspect-ratio: 1;
   padding: 0.2em 0.4em;
-  color: #22c55e;
   border: 2px solid var(--transparent-color);
   background-color: var(--transparent-color);
   border-radius: 5px;
+  z-index: 5;
   font-size: 0.875rem;
   line-height: 1;
   text-transform: uppercase;
   font-weight: 400;
   letter-spacing: 0.05em;
-  transition: background-color 200ms ease-out, color 200ms ease-out;
-  stroke: #22c55e;
+  transition: stroke 200ms ease-out;
+  stroke: var(--blue-primary-color);
 
   @media (hover: hover) {
     &:hover {
-      background-color: #22c55e;
-      stroke: white;
+      stroke: var(--green-secondary-color);
     }
   }
 `;
@@ -98,15 +103,18 @@ export const Code = ({ code }) => {
   };
 
   return (
-    <CodeContainer>
+    <Wrapper>
       {navigator.clipboard && (
         <CopyButton onClick={() => copyToClipboard(code)} aria-label="Copy code to clipboard">
           {isCopied ? <CheckMarkIcon /> : <CopyIcon />}
         </CopyButton>
       )}
-      <pre>
-        <code className="language-jsx">{code}</code>
-      </pre>
-    </CodeContainer>
+
+      <Container>
+        <pre>
+          <code className="language-jsx">{code}</code>
+        </pre>
+      </Container>
+    </Wrapper>
   );
 };

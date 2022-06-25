@@ -28,11 +28,6 @@ export const examples = [
     MinimalConfigurationROCode
   ),
   new Example(
-    'Minimal Configuration - Image - 2',
-    <MinimalConfigurationRO />,
-    MinimalConfigurationROCode
-  ),
-  new Example(
     'Minimal Configuration - Image - 3',
     <MinimalConfigurationRO />,
     MinimalConfigurationROCode
@@ -45,7 +40,7 @@ export const examples = [
   new Example(
     'Minimal Configuration - Image - 5',
     <MinimalConfigurationRO />,
-    MinimalConfigurationROCode
+    MinimalConfigurationCode
   ),
   new Example(
     'Minimal Configuration - Image - 6',
@@ -55,7 +50,7 @@ export const examples = [
   new Example(
     'Minimal Configuration - Image - 7',
     <MinimalConfigurationRO />,
-    MinimalConfigurationROCode
+    MinimalConfigurationCode
   ),
   new Example(
     'Minimal Configuration - Image - 8',
@@ -75,10 +70,15 @@ export const examples = [
   new Example(
     'Minimal Configuration - Image - 11',
     <MinimalConfigurationRO />,
-    MinimalConfigurationROCode
+    MinimalConfigurationCode
   ),
   new Example(
     'Minimal Configuration - Image - 12',
+    <MinimalConfigurationRO />,
+    MinimalConfigurationROCode
+  ),
+  new Example(
+    'Minimal Configuration - Image - 13',
     <MinimalConfigurationRO />,
     MinimalConfigurationROCode
   ),

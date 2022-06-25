@@ -1,37 +1,39 @@
 {
-  "name": "examples-website",
-  "private": true,
-  "version": "0.0.0",
+  "name": "react-advanced-rating-examples",
+  "private": false,
+  "version": "0.1.0",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@vitejs/plugin-react": "^1.3.0",
     "ahooks": "^3.5.0",
-    "esbuild": "^0.14.45",
+    "esbuild": "^0.14.44",
     "goober": "^2.1.9",
+    "lodash.orderby": "^4.6.0",
+    "lodash.round": "^4.0.4",
     "prettier": "^2.7.0",
     "prismjs": "^1.28.0",
     "react": "^18.2.0",
     "react-advanced-rating": "file:react-advanced-rating-v0.1.0.tgz",
     "react-device-detect": "^2.2.2",
     "react-dom": "^18.2.0",
+    "vite": "^2.9.9",
     "vite-plugin-prismjs": "^0.0.8"
   },
   "resolutions": {
-    "esbuild": "0.14.45"
+    "esbuild": "0.14.44"
   },
   "devDependencies": {
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
-    "@vitejs/plugin-react": "^1.3.0",
     "eslint": "^8.2.0",
     "eslint-config-airbnb": "19.0.4",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.28.0",
-    "eslint-plugin-react-hooks": "^4.3.0",
-    "vite": "^2.9.9"
+    "eslint-plugin-react-hooks": "^4.3.0"
   }
 }

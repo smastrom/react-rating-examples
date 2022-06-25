@@ -6,7 +6,10 @@ export const GlobalStyles = createGlobalStyles`
       --background-color: #F3F4F6;
       --border-color: #EEEFF2;
       --blue-primary-color: #2563EB;
+      --green-secondary-color: #22c55e;
       --transparent-color: rgba(0, 0, 0, 0);
+      --scrollbar-color: #d1d5db;
+      --foreground-color: #0F172A;
     }
 
     a {
@@ -36,6 +39,7 @@ export const GlobalStyles = createGlobalStyles`
       font-weight: 400;
       -moz-tab-size: 4;
       tab-size: 4;
+      color: var(--foreground-color);
       font-family: "Source Sans Pro", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
         "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
     }

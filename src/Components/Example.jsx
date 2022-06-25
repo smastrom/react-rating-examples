@@ -4,18 +4,19 @@ import { styled } from 'goober';
 import { Code } from './Code';
 
 const Container = styled('section', forwardRef)`
+  --padding: 15px;
   background-color: white;
-  margin-bottom: 30px;
+  margin-bottom: var(--padding);
   border-radius: 20px;
   border: 2px solid var(--border-color);
-  padding: 15px;
+  padding: var(--padding);
   display: flex;
   gap: 40px;
   position: relative;
   flex-direction: column;
 
-  @media (min-width: 768px) {
-    padding: 20px;
+  @media (min-width: 1920px) {
+    --padding: 30px;
   }
 
   &:last-of-type {
@@ -36,10 +37,11 @@ const Title = styled('h1')`
 `;
 
 const Content = styled('div')`
+  --gap: 40px;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr;
-  gap: 40px;
+  gap: var(--gap);
   align-items: center;
 
   @media (min-width: 1200px) {
@@ -55,7 +57,7 @@ const JSXContainer = styled('div')`
   grid-row: 1;
 
   @media (min-width: 1200px) {
-    margin-top: calc(-1em - 40px - 20px);
+    margin-top: calc(-1em - var(--gap) - var(--padding));
     grid-row: auto;
   }
 `;
