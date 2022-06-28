@@ -1,8 +1,20 @@
 import { MinimalConfiguration, MinimalConfigurationCode } from './1.MinimalConfiguration';
-import {
-  MinimalConfigurationRO,
-  MinimalConfigurationROCode,
-} from './2.MinimalConfigurationRO';
+import { RightToLeft, RightToLeftCode } from './2.RightToLeft';
+import { HighlightOnlySelected, HighlightOnlySelectedCode } from './3.HighlightOnlySelected';
+import { HalfFillSVG, HalfFillSVGCode } from './4.HalfFillSVG';
+import { HalfFillBox, HalfFillBoxCode } from './4.HalfFillBox';
+import { ResetButton, ResetButtonCode } from './5.ResetButton';
+import { ResetOnSecondClick, ResetOnSecondClickCode } from './6.ResetOnSecondClick';
+import { ResetOnClickOutside, ResetOnClickOutsideCode } from './7.ResetOnClickOutside';
+import { WithCustomFeedback, WithCustomFeedbackCode } from './8.CustomFeedback';
+import { WithAsyncOp, WithAsyncOpCode } from './9.AsyncCallback';
+import { MultipleFormRatings, MultipleFormRatingsCode } from './10.MultipleFormRatings';
+import { CustomSVGColors, CustomSVGColorsCode } from './11.CustomSVGColors';
+import { CustomBoxColors, CustomBoxColorsCode } from './12.CustomBoxColors';
+import { CustomActiveColors, CustomActiveColorsCode } from './13.CustomActiveColors';
+import { FacesRating, FacesRatingCode } from './14.FacesRating';
+import { UpVoteDownVote, UpVoteDownVoteCode } from './15.UpvoteDownvote';
+import { LikeBoxAsync, LikeBoxAsyncCode } from './16.AsyncLikeBox';
 
 const toSnakeCase = (string) =>
   string.split(' ').join('_').replace('-', '').replace('__', '_').toLowerCase();
@@ -11,75 +23,31 @@ class Example {
   constructor(title, jsx, code) {
     this.title = title;
     this.id = toSnakeCase(this.title);
-    this.jsx = <div style={{ maxWidth: 250, width: '100%' }}>{jsx}</div>;
+    this.jsx = jsx;
     this.code = code.trimStart();
   }
 }
 
 export const examples = [
+  new Example('Minimal configuration', <MinimalConfiguration />, MinimalConfigurationCode),
+  new Example('Right to left', <RightToLeft />, RightToLeftCode),
   new Example(
-    'Minimal Configuration - RadioGroup',
-    <MinimalConfiguration />,
-    MinimalConfigurationCode
+    'Hightlight only selected',
+    <HighlightOnlySelected />,
+    HighlightOnlySelectedCode
   ),
-  new Example(
-    'Minimal Configuration - Image',
-    <MinimalConfigurationRO />,
-    MinimalConfigurationROCode
-  ),
-  new Example(
-    'Minimal Configuration - Image - 3',
-    <MinimalConfigurationRO />,
-    MinimalConfigurationROCode
-  ),
-  new Example(
-    'Minimal Configuration - Image - 4',
-    <MinimalConfigurationRO />,
-    MinimalConfigurationROCode
-  ),
-  new Example(
-    'Minimal Configuration - Image - 5',
-    <MinimalConfigurationRO />,
-    MinimalConfigurationCode
-  ),
-  new Example(
-    'Minimal Configuration - Image - 6',
-    <MinimalConfigurationRO />,
-    MinimalConfigurationROCode
-  ),
-  new Example(
-    'Minimal Configuration - Image - 7',
-    <MinimalConfigurationRO />,
-    MinimalConfigurationCode
-  ),
-  new Example(
-    'Minimal Configuration - Image - 8',
-    <MinimalConfigurationRO />,
-    MinimalConfigurationROCode
-  ),
-  new Example(
-    'Minimal Configuration - Image - 9',
-    <MinimalConfigurationRO />,
-    MinimalConfigurationROCode
-  ),
-  new Example(
-    'Minimal Configuration - Image - 10',
-    <MinimalConfigurationRO />,
-    MinimalConfigurationROCode
-  ),
-  new Example(
-    'Minimal Configuration - Image - 11',
-    <MinimalConfigurationRO />,
-    MinimalConfigurationCode
-  ),
-  new Example(
-    'Minimal Configuration - Image - 12',
-    <MinimalConfigurationRO />,
-    MinimalConfigurationROCode
-  ),
-  new Example(
-    'Minimal Configuration - Image - 13',
-    <MinimalConfigurationRO />,
-    MinimalConfigurationROCode
-  ),
+  new Example('Reset button', <ResetButton />, ResetButtonCode),
+  new Example('Reset on second click', <ResetOnSecondClick />, ResetOnSecondClickCode),
+  new Example('Reset on click outside', <ResetOnClickOutside />, ResetOnClickOutsideCode),
+  new Example('Custom feedback', <WithCustomFeedback />, WithCustomFeedbackCode),
+  new Example('Asynchronous callback', <WithAsyncOp />, WithAsyncOpCode),
+  new Example('Multiple ratings in a form', <MultipleFormRatings />, MultipleFormRatingsCode),
+  new Example('Custom SVG colors', <CustomSVGColors />, CustomSVGColorsCode),
+  new Example('Custom box colors', <CustomBoxColors />, CustomBoxColorsCode),
+  new Example('Custom active colors', <CustomActiveColors />, CustomActiveColorsCode),
+  new Example('Half-fill - SVG', <HalfFillSVG />, HalfFillSVGCode),
+  new Example('Half-fill - Box', <HalfFillBox />, HalfFillBoxCode),
+  new Example('Faces rating', <FacesRating />, FacesRatingCode),
+  new Example('Upvote / Downvote', <UpVoteDownVote />, UpVoteDownVoteCode),
+  new Example('Asynchronous Like Box', <LikeBoxAsync />, LikeBoxAsyncCode),
 ];

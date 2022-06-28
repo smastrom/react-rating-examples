@@ -4,10 +4,9 @@ import react from '@vitejs/plugin-react';
 import prismjs from 'vite-plugin-prismjs';
 
 export default defineConfig({
-  build: {
-    minify: 'terser',
+  esbuild: {
+    // drop: ['console'],
   },
-
   plugins: [
     react(),
     prismjs({

@@ -119,6 +119,18 @@ const Footer = styled('div')`
   flex-direction: column;
 `;
 
+const ReadOnlySpan = styled('span')`
+  font-size: 0.725rem;
+  text-transform: uppercase;
+  background: #ede9fe;
+  color: #8b5cf6;
+  padding: 0.2em 0.4em;
+  border-radius: 5px;
+  height: max-content;
+  margin-right: 5px;
+  white-space: nowrap;
+`;
+
 export const Sidebar = ({ intersectionData }) => {
   const [location] = useHashLocation();
 
@@ -155,6 +167,10 @@ export const Sidebar = ({ intersectionData }) => {
                 isIntersecting={intersectionData.id === id}
                 aria-current={intersectionData.id === id}
               >
+                {(title === 'Half-fill - Box' || title === 'Half-fill - SVG') && (
+                  <ReadOnlySpan>Read-only</ReadOnlySpan>
+                )}
+
                 {title}
               </NavLink>
             </li>
