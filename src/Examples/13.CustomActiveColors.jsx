@@ -7,7 +7,7 @@ const StarDrawing = (
 );
 
 const customStyles = {
-  svgChildNodes: StarDrawing,
+  itemShapes: StarDrawing,
   boxBorderWidth: 3,
 
   activeFillColor: ['#FEE2E2', '#FFEDD5', '#FEF9C3', '#ECFCCB', '#D1FAE5'],
@@ -48,7 +48,7 @@ const Star = (
 ); // Source: https://www.svgrepo.com/svg/353297/star
   
 const customStyles = {
-  svgChildNodes: Star,
+  itemShapes: Star,
   boxBorderWidth: 2,
 
   activeFillColor: ['#FEE2E2', '#FFEDD5', '#FEF9C3', '#ECFCCB', '#D1FAE5'],

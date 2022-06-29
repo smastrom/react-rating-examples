@@ -31,7 +31,7 @@ const HappyFace = (
 );
 
 const customStyles = {
-  svgChildNodes: [SadFace, NeutralFace, SmilingFace, HappyFace],
+  itemShapes: [SadFace, NeutralFace, SmilingFace, HappyFace],
   activeFillColor: ['#da1600', '#dcb000', '#61bb00', '#009664'],
   inactiveFillColor: '#a8a8a8',
 };
@@ -50,7 +50,7 @@ export const FacesRating = () => {
         value={ratingValue}
         onChange={(selectedValue) => setRatingValue(selectedValue)}
         itemStyles={customStyles}
-        limit={4}
+        items={4}
         highlightOnlySelected
         resetOnSecondClick
         spaceBetween="medium"
@@ -90,7 +90,7 @@ const HappyFace = (
 );
 
 const customStyles = {
-  svgChildNodes: [SadFace, NeutralFace, SmilingFace, HappyFace],
+  itemShapes: [SadFace, NeutralFace, SmilingFace, HappyFace],
   activeFillColor: ['#da1600', '#dcb000', '#61bb00', '#009664'],
   inactiveFillColor: '#a8a8a8',
 };
@@ -104,7 +104,7 @@ const App = () => {
         value={ratingValue}
         onChange={(selectedValue) => setRatingValue(selectedValue)}
         itemStyles={customStyles}
-        limit={4}
+        items={4}
         highlightOnlySelected
         resetOnSecondClick
         spaceBetween="medium"

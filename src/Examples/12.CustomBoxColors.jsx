@@ -13,7 +13,7 @@ const StarDrawing = (
 );
 
 const customStyles = {
-  svgChildNodes: StarDrawing,
+  itemShapes: StarDrawing,
   activeFillColor: 'white',
   inactiveFillColor: 'white',
   activeBoxColor: '#EC4899',
@@ -54,7 +54,7 @@ const Heart = (
 ); // Source: https://www.svgrepo.com/svg/40627/heart
   
 const customStyles = {
-  svgChildNodes: Heart,
+  itemShapes: Heart,
   activeFillColor: 'white',
   activeBoxColor: '#EC4899',
   inactiveFillColor: 'white',

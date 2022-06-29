@@ -541,7 +541,7 @@ const App = () => {
   return (
       <div style={{ maxWidth: 600, width: "100%" }}>
         <RatingInput
-            limit={3}
+            items={3}
             itemStyles={itemStyles}
             value={ratingValue}
             onChange={(currentValue) => setValue(currentValue)}

@@ -11,7 +11,7 @@ const ArrowUp = <path d={dAttrContent} />;
 const ArrowDown = <path transform="rotate(180 0 0)" d={dAttrContent} />;
 
 const customStyles = {
-  svgChildNodes: [ArrowUp, ArrowDown],
+  itemShapes: [ArrowUp, ArrowDown],
   boxBorderWidth: 2,
   activeFillColor: ['#16A34A', '#E11D48'],
   activeBoxBorderColor: ['#16A34A', '#E11D48'],
@@ -34,7 +34,7 @@ export const UpVoteDownVote = () => {
           value={ratingValue}
           onChange={(selectedValue) => setRatingValue(selectedValue)}
           itemStyles={customStyles}
-          limit={2}
+          items={2}
           highlightOnlySelected
           resetOnSecondClick
           radius="full"
@@ -63,7 +63,7 @@ const ArrowUp = <path d={dAttrContent} />;
 const ArrowDown = <path transform="rotate(180 0 0)" d={dAttrContent} />;
   
 const customStyles = {
-  svgChildNodes: [ArrowUp, ArrowDown],
+  itemShapes: [ArrowUp, ArrowDown],
   boxBorderWidth: 2,
   activeFillColor: ['#16A34A', '#E11D48'],
   activeBoxBorderColor: ['#16A34A', '#E11D48'],
@@ -81,7 +81,7 @@ const App = () => {
           value={ratingValue}
           onChange={(selectedValue) => setRatingValue(selectedValue)}
           itemStyles={customStyles}
-          limit={2}
+          items={2}
           highlightOnlySelected
           resetOnSecondClick
           radius="full"

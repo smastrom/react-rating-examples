@@ -3,7 +3,7 @@ import { Rating } from 'react-advanced-rating';
 import './17.CustomCSS.css';
 
 const customStyles = {
-  svgChildNodes: (
+  itemShapes: (
     <polygon points="478.53 189 318.53 152.69 239.26 0 160 152.69 0 189 111.02 303.45 84 478.53 239.26 396.63 394.53 478.53 367.51 303.45 478.53 189" />
   ),
 };
@@ -76,7 +76,7 @@ import './custom-styles.css';
 
 // 1. Omit the properties styled via CSS
 const customStyles = {
-  svgChildNodes: Star;
+  itemShapes: Star;
 };
 
 const App = () => (

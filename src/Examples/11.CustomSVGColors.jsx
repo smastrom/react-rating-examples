@@ -14,7 +14,7 @@ C426.818,168.817,420.858,143.814,398.799,141.794z"
 );
 
 const customStyles = {
-  svgChildNodes: StarDrawing,
+  itemShapes: StarDrawing,
   activeFillColor: '#22C55E',
   inactiveFillColor: '#BBF7D0',
 };
@@ -52,7 +52,7 @@ const StarDrawing = (
 ); // Source: https://www.svgrepo.com/svg/118939/star
   
 const customStyles = {
-  svgChildNodes: StarDrawing,
+  itemShapes: StarDrawing,
   activeFillColor: '#22C55E',
   inactiveFillColor: '#BBF7D0',
 };

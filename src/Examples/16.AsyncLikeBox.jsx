@@ -11,7 +11,7 @@ const Heart = (
 );
 
 const customStyles = {
-  svgChildNodes: Heart,
+  itemShapes: Heart,
   itemStrokeWidth: 20,
   activeFillColor: '#EC4899',
   activeStrokeColor: '#EC4899',
@@ -61,7 +61,7 @@ export const LikeBoxAsync = () => {
           value={ratingValue}
           onChange={handleAsyncLike}
           itemStyles={customStyles}
-          limit={1}
+          items={1}
           resetOnSecondClick
           accessibleLabel="Like / Unlike this post"
           accessibleLabels={[
@@ -94,7 +94,7 @@ const Heart = (
 ); // Source: https://www.svgrepo.com/svg/171367/heart
   
 const customStyles = {
-  svgChildNodes: Heart,
+  itemShapes: Heart,
   itemStrokeWidth: 20,
   activeFillColor: '#EC4899',
   activeStrokeColor: '#EC4899',
@@ -130,7 +130,7 @@ const AsLikeBox = () => {
         value={ratingValue}
         onChange={handleAsyncLike}
         itemStyles={customStyles}
-        limit={1}
+        items={1}
         resetOnSecondClick
         accessibleLabel="Like or Unlike this post"
         accessibleLabels={[
