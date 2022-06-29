@@ -1,4 +1,5 @@
 import { useState } from 'react';
+
 import { Rating } from 'react-advanced-rating';
 
 const dAttrContent = `M13.915,0.379l8.258,9.98c0,0,1.252,1.184-0.106,1.184c-1.363,0-4.653,0-4.653,0s0,0.801,0,2.025

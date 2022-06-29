@@ -40,9 +40,8 @@ const CopyButton = styled('button')`
   right: 10px;
   top: 10px;
   aspect-ratio: 1;
-  padding: 0.2em 0.4em;
+  padding: 0.2em 0.2em;
   border: 2px solid var(--transparent-color);
-  background-color: var(--transparent-color);
   border-radius: 5px;
   z-index: 5;
   font-size: 0.875rem;
@@ -91,7 +90,7 @@ const CheckMarkIcon = () => (
   </svg>
 );
 
-export const Code = ({ code }) => {
+export const Code = ({ code, isCSS }) => {
   const [isCopied, setIsCopied] = useState(false);
 
   const copyToClipboard = async (code) => {
@@ -111,8 +110,8 @@ export const Code = ({ code }) => {
       )}
 
       <Container>
-        <pre>
-          <code className="language-jsx">{code}</code>
+        <pre tabIndex={-1}>
+          <code className={isCSS ? 'language-css' : 'language-jsx'}>{code}</code>
         </pre>
       </Container>
     </Wrapper>

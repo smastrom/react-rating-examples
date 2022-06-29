@@ -60,13 +60,35 @@ const JSXContainer = styled('div')`
     margin-top: calc(-1em - var(--gap) - var(--padding));
     grid-row: auto;
   }
+
+  & button {
+    transition: opacity 200ms ease-out;
+
+    @media (hover: hover) {
+      &:hover {
+        opacity: 0.75;
+      }
+    }
+  }
 `;
 
-export const Example = forwardRef(({ id, title, code, jsx }, ref) => (
+const DoubleCodeContainer = styled('div')`
+  display: grid;
+  gap: var(--padding);
+`;
+
+export const Example = forwardRef(({ id, title, code, jsx, hasCSS, cssCode }, ref) => (
   <Container id={id} ref={ref}>
     <Title>{title}</Title>
     <Content>
-      <Code code={code} />
+      {hasCSS ? (
+        <DoubleCodeContainer>
+          <Code isCSS code={cssCode} />
+          <Code code={code} />
+        </DoubleCodeContainer>
+      ) : (
+        <Code code={code} />
+      )}
       <JSXContainer>{jsx}</JSXContainer>
     </Content>
   </Container>

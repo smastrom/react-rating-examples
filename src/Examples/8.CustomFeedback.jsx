@@ -1,4 +1,5 @@
 import { useState } from 'react';
+
 import { Rating } from 'react-advanced-rating';
 
 const getRating = (ratingValue) => {
@@ -79,7 +80,7 @@ const App = () => {
 
   return (
     <div>
-      <div style={{ maxWidth: 200, width: '100%'}}>
+      <div style={{ maxWidth: 200, width: '100%' }}>
         <Rating
           value={ratingValue}
           onChange={(selectedValue) => setRatingValue(selectedValue)}

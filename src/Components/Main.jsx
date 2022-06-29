@@ -229,7 +229,7 @@ export const Main = ({ setIntersectionData }) => {
         </HeaderContent>
         <HeaderGradient />
       </MobileHeader>
-      {examples.map(({ id, title, code, jsx }, index) => (
+      {examples.map(({ id, title, code, jsx, hasCSS, cssCode }, index) => (
         <Example
           key={id}
           id={id}
@@ -238,6 +238,8 @@ export const Main = ({ setIntersectionData }) => {
           title={title}
           code={code}
           jsx={jsx}
+          hasCSS={hasCSS}
+          cssCode={cssCode}
         />
       ))}
       <Footer>

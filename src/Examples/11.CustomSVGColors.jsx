@@ -1,4 +1,5 @@
 import { useState } from 'react';
+
 import { Rating } from 'react-advanced-rating';
 
 const StarDrawing = (
@@ -24,7 +25,7 @@ export const CustomSVGColors = () => {
   return (
     <div
       style={{
-        maxWidth: 200,
+        maxWidth: 300,
         width: '100%',
       }}
     >
@@ -34,7 +35,6 @@ export const CustomSVGColors = () => {
         itemStyles={customStyles}
         transition="zoom"
       />
-      <Rating value={3.45} readOnly itemStyles={customStyles} />
     </div>
   );
 };
@@ -61,14 +61,13 @@ const App = () => {
   const [ratingValue, setRatingValue] = useState(4);
 
   return (
-    <div style={{ maxWidth: 200, width: '100%'}}>
+    <div style={{ maxWidth: 300, width: '100%' }}>
       <Rating
         value={ratingValue}
         onChange={(selectedValue) => setRatingValue(selectedValue)}
         itemStyles={customStyles}
         transition="zoom"
       />
-      <Rating readOnly value={3.45} itemStyles={customStyles} />
     </div>
   );
 };`;

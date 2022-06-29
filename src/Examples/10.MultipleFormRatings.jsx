@@ -1,5 +1,6 @@
 /* eslint-disable no-alert */
 import { useState } from 'react';
+
 import { Rating } from 'react-advanced-rating';
 
 export const MultipleFormRatings = () => {
@@ -108,9 +109,13 @@ const App = () => {
   };
   
   return (
-    <form onSubmit={handleSubmit}>
+    <form
+      onSubmit={handleSubmit}
+      maxWidth: 200,
+      width: '100%',
+    >
       <label htmlFor="name">
-        <span>Your name</span>
+        Your name
           <input
             type="text"
             id="name"

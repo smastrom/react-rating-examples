@@ -1,4 +1,5 @@
 import { useState } from 'react';
+
 import { Rating } from 'react-advanced-rating';
 
 const StarDrawing = (
@@ -63,7 +64,7 @@ const App = () => {
   const [ratingValue, setRatingValue] = useState(4);
 
   return (
-    <div style={{ maxWidth: 500, width: '100%'}}>
+    <div style={{ maxWidth: 500, width: '100%' }}>
       <Rating
         value={ratingValue}
         onChange={(selectedValue) => setRatingValue(selectedValue)}

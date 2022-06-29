@@ -28,7 +28,7 @@ const App = () => {
   const [ratingValue, setRatingValue] = useState(1);
 
   return (
-    <div dir="rtl" style={{ maxWidth: 200, width: '100%'}}>
+    <div dir="rtl" style={{ maxWidth: 200, width: '100%' }}>
       <Rating
         value={ratingValue}
         onChange={(selectedValue) => setRatingValue(selectedValue)}

@@ -1,5 +1,6 @@
 /* eslint-disable no-promise-executor-return */
 import { useState } from 'react';
+
 import { Rating } from 'react-advanced-rating';
 
 export const WithAsyncOp = () => {

@@ -122,8 +122,8 @@ const Footer = styled('div')`
 const ReadOnlySpan = styled('span')`
   font-size: 0.725rem;
   text-transform: uppercase;
-  background: #ede9fe;
-  color: #8b5cf6;
+  background: #eff6ff;
+  color: var(--blue-primary-color);
   padding: 0.2em 0.4em;
   border-radius: 5px;
   height: max-content;

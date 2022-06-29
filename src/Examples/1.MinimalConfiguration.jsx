@@ -1,4 +1,5 @@
 import { useState } from 'react';
+
 import { Rating } from 'react-advanced-rating';
 
 export const MinimalConfiguration = () => {
