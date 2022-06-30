@@ -25,7 +25,7 @@ export const ResetOnSecondClickCode = `
 const App = () => {
   const [ratingValue, setRatingValue] = useState(0);
   
-  // After clicking on an item, click again on it
+  // Click again on the item just selected
   
   return (
     <div style={{ maxWidth: 200, width: '100%' }}>

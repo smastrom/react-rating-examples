@@ -677,7 +677,7 @@ const App = () => {
   const [ratingValue, setRatingValue] = useState(3);
 
   return (
-      <div style={{ maxWidth: 250, width: "100%", display: 'flex', flexDirection: "column", gap: '10px' }}>
+      <div style={{ maxWidth: 250, width: "100%", display: 'flex', flexDirection: "column", gap: 10 }}>
         <h3 id={LABEL_DOM_ID}>Rate this product</h3>
         <Rating
             value={ratingValue}
