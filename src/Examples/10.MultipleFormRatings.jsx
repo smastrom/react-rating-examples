@@ -45,33 +45,33 @@ export const MultipleFormRatings = () => {
         />
       </label>
 
-      <div>
+      <div role="group">
         <h2 id="cleanliness_rating">Cleanliness</h2>
         <Rating
           value={formData.cleanliness}
-          labelledBy="cleanliness_rating"
+          visibleLabelId="cleanliness_rating"
           onChange={(selectedValue) =>
             setFormData((prevData) => ({ ...prevData, cleanliness: selectedValue }))
           }
         />
       </div>
 
-      <div>
+      <div role="group">
         <h2 id="staff_rating">Staff</h2>
         <Rating
           value={formData.staff}
-          labelledBy="staff_rating"
+          visibleLabelId="staff_rating"
           onChange={(selectedValue) =>
             setFormData((prevData) => ({ ...prevData, staff: selectedValue }))
           }
         />
       </div>
 
-      <div>
+      <div role="group">
         <h2 id="location_rating">Location</h2>
         <Rating
           value={formData.location}
-          labelledBy="location_rating"
+          visibleLabelId="location_rating"
           onChange={(selectedValue) =>
             setFormData((prevData) => ({ ...prevData, location: selectedValue }))
           }
@@ -125,33 +125,33 @@ const App = () => {
           />
         </label>
   
-        <div>
+        <div role="group">
           <h2 id="cleanliness_rating">Cleanliness</h2>
           <Rating
             value={formData.cleanliness}
-            labelledBy="cleanliness_rating"
+            visibleLabelId="cleanliness_rating"
             onChange={(selectedValue) =>
               setFormData((prevData) => ({ ...prevData, cleanliness: selectedValue }))
             }
           />
         </div>
   
-        <div>
+        <div role="group">
           <h2 id="staff_rating">Staff</h2>
           <Rating
             value={formData.staff}
-            labelledBy="staff_rating"
+            visibleLabelId="staff_rating"
             onChange={(selectedValue) =>
               setFormData((prevData) => ({ ...prevData, staff: selectedValue }))
             }
           />
         </div>
 
-        <div>
+        <div role="group">
           <h2 id="location_rating">Location</h2>
           <Rating
             value={formData.location}
-            labelledBy="location_rating"
+            visibleLabelId="location_rating"
             onChange={(selectedValue) =>
               setFormData((prevData) => ({ ...prevData, location: selectedValue }))
             }

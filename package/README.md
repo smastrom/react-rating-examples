@@ -176,9 +176,9 @@ Would you like to style it via CSS? Take a look [here]().
 | --------------------- | ------------------------------------------------------- | ------------------------------------------------------------------------------------------ | ----------------------------------------------------------------- | ------------------------------- | ------------------- |
 | enableKeyboard        | boolean                                                 | Whether or not to enable keyboard navigation                                               | true                                                              | No                              | :large_blue_circle: |
 | isRequired            | boolean                                                 | Whether or not to tell assistive technologies that rating is required                  | true                                                              | No                              | :large_blue_circle: |
-| labelledBy            | string                                                  | `id` of the element to be used as radio-group label. If set, takes precedence over `accessibleLabel` | undefined                                                         | No                              | :large_blue_circle: |
-| accessibleLabels      | string[]                                                | Accessible labels of each rating item                                                     | `Rate 1`, `Rate 2`...                                             | No                              | :large_blue_circle: |
-| accessibleLabel       | string                                                  | Value of `aria-label` attribute                                                            | `Rated <value> on <limit>` or `Rating` if `readOnly` is **false** | No                              | :green_circle:      |
+| labelledBy            | string                                                  | `id` of the element to be used as radio-group label. If set, takes precedence over `invisibleLabel` | undefined                                                         | No                              | :large_blue_circle: |
+| invisibleLabels      | string[]                                                | Accessible labels of each rating item                                                     | `Rate 1`, `Rate 2`...                                             | No                              | :large_blue_circle: |
+| invisibleLabel       | string                                                  | Value of `aria-label` attribute                                                            | `Rated <value> on <limit>` or `Rating` if `readOnly` is **false** | No                              | :green_circle:      |
 
 <br />
 
@@ -700,20 +700,20 @@ const App = () => {
         <Rating
             value={ratingValue}
             onChange={(currentValue) => setRatingValue(currentValue)}
-            accessibleLabel="Rate this product"
+            invisibleLabel="Rate this product"
         >
     </div>
   )
 };
 ```
 
-If you have set both props, `labelledBy` will take precedence over `accessibleLabel`.
+If you have set both props, `labelledBy` will take precedence over `invisibleLabel`.
 
 ### Rating items labels
 
-By default, if no `accessibleLabels` prop is set, an hidden label will automatically be generated for each rating item. The first item will be labelled `Rate 1`, the second one `Rate 2` and so on.
+By default, if no `invisibleLabels` prop is set, an hidden label will automatically be generated for each rating item. The first item will be labelled `Rate 1`, the second one `Rate 2` and so on.
 
-To customize them, pass an array of strings to `accessibleLabels`:
+To customize them, pass an array of strings to `invisibleLabels`:
 
 ```jsx
 const LABEL_DOM_ID = "rating_group_label"
@@ -736,7 +736,7 @@ const App = () => {
             value={ratingValue}
             onChange={(currentValue) => setRatingValue(currentValue)}
             labelledBy={LABEL_DOM_ID}
-            accessibleLabels={labels}
+            invisibleLabels={labels}
         >
     </div>
   )
@@ -745,7 +745,7 @@ const App = () => {
 
 ### Image element label
 
-By default if `readOnly` is set to **true**, an accessible label for the image element will be equal to `Rated ${value} on ${limit}`. To customize it, simply set the `accessibleLabel` prop:
+By default if `readOnly` is set to **true**, an accessible label for the image element will be equal to `Rated ${value} on ${limit}`. To customize it, simply set the `invisibleLabel` prop:
 
 ```jsx
 import React from 'react';
@@ -758,7 +758,7 @@ const ratingLabel = `${productName} is rated ${ratingValue} on 5`;
 
 const App = () => (
   <div style={{ maxWidth: 600, width: "100%" }}>
-    <Rating readOnly value={ratingValue} accessibleLabel={ratingLabel} />
+    <Rating readOnly value={ratingValue} invisibleLabel={ratingLabel} />
   </div>
 );
 ```

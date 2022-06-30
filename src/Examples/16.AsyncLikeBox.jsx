@@ -63,9 +63,9 @@ export const LikeBoxAsync = () => {
           itemStyles={customStyles}
           items={1}
           resetOnSecondClick
-          accessibleLabel="Like / Unlike this post"
-          accessibleLabels={[
-            `${ratingValue === 0 ? 'Click to like this post' : 'Click to unlike this post'}`,
+          invisibleLabel="Like / Unlike this post"
+          invisibleItemLabels={[
+            `${ratingValue === 0 ? 'Like this post' : 'Unlike this post'}`,
           ]}
         />
       </div>
@@ -132,9 +132,9 @@ const AsLikeBox = () => {
         itemStyles={customStyles}
         items={1}
         resetOnSecondClick
-        accessibleLabel="Like or Unlike this post"
-        accessibleLabels={[
-          \`\${ratingValue === 0 ? 'Click to like this post' : 'Click to unlike this post'}\`,
+        invisibleLabel="Like or Unlike this post"
+        invisibleItemLabels={[
+          \`\${ratingValue === 0 ? 'Like this post' : 'Unlike this post'}\`,
         ]}
       />
     </div>

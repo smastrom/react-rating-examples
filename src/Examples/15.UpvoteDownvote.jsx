@@ -41,8 +41,8 @@ export const UpVoteDownVote = () => {
           orientation="vertical"
           spaceBetween="medium"
           spaceInside="large"
-          accessibleLabels={['Upvote', 'Downvote']}
-          accessibleLabel="Upvote or downvote this post"
+          invisibleLabel="Upvote or downvote this post"
+          invisibleItemLabels={['Upvote', 'Downvote']}
         />
       </div>
       <div>{ratingValue === 0 && 'Upvote / Downvote'}</div>
@@ -88,8 +88,8 @@ const App = () => {
           orientation="vertical"
           spaceBetween="medium"
           spaceInside="large"
-          accessibleLabels={['Upvote', 'Downvote']}
-          accessibleLabel="Upvote or downvote this post"
+          invisibleLabel="Upvote or downvote this post"
+          invisibleItemLabels={['Upvote', 'Downvote']}
         />
       </div>
       <div>{ratingValue === 0 && 'Upvote / Downvote'}</div>

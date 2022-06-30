@@ -5,8 +5,6 @@ import { Rating } from 'react-advanced-rating';
 export const ResetOnSecondClick = () => {
   const [ratingValue, setRatingValue] = useState(0);
 
-  // After clicking on an item, click again on it!
-
   return (
     <div
       style={{
@@ -27,7 +25,7 @@ export const ResetOnSecondClickCode = `
 const App = () => {
   const [ratingValue, setRatingValue] = useState(0);
   
-  // After clicking on an item, click again on it!
+  // After clicking on an item, click again on it
   
   return (
     <div style={{ maxWidth: 200, width: '100%' }}>

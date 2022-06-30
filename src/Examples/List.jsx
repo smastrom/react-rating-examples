@@ -16,6 +16,9 @@ import { FacesRating, FacesRatingCode } from './14.FacesRating';
 import { UpVoteDownVote, UpVoteDownVoteCode } from './15.UpvoteDownvote';
 import { LikeBoxAsync, LikeBoxAsyncCode } from './16.AsyncLikeBox';
 import { CustomCSS, CustomCSSCode, CustomCSSCodeCSS } from './17.CustomCSS';
+import { CustomInvisibleLabels, CustomInvisibleLabelsCode } from './18.CustomInvisibleLabels';
+import { CustomVisibleLabels, CustomVisibleLabelsCode } from './19.CustomVisibleLabels';
+import { CustomMixesLabels, CustomMixesLabelsCode } from './20.CustomMixedLabels';
 
 const toSnakeCase = (string) =>
   string.split(' ').join('_').replace('-', '').replace('__', '_').toLowerCase();
@@ -48,6 +51,9 @@ export const examples = [
   new Example('Faces rating', <FacesRating />, FacesRatingCode),
   new Example('Upvote / Downvote', <UpVoteDownVote />, UpVoteDownVoteCode),
   new Example('Asynchronous Like Box', <LikeBoxAsync />, LikeBoxAsyncCode),
+  new Example('Custom invisible labels', <CustomInvisibleLabels />, CustomInvisibleLabelsCode),
+  new Example('Custom visible labels', <CustomVisibleLabels />, CustomVisibleLabelsCode),
+  new Example('Custom mixed labels', <CustomMixesLabels />, CustomMixesLabelsCode),
   new Example('Custom CSS', <CustomCSS />, CustomCSSCode, true, CustomCSSCodeCSS),
   new Example('Right to left', <RightToLeft />, RightToLeftCode),
 ];
