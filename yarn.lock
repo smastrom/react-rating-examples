@@ -1840,9 +1840,10 @@ punycode@^2.1.0:
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
   integrity sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
 
-"react-advanced-rating@file:rar-15.tgz":
-  version "0.1.0"
-  resolved "file:rar-15.tgz#b552c9886f41d574b439cf1a9f4bfae06ed2ef01"
+react-advanced-rating@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-advanced-rating/-/react-advanced-rating-1.0.0.tgz#15b062eee016b72a72599e07d77882705d6c5a32"
+  integrity sha512-wH1a4Yit0lyDyrCTjOXFoo85r4VsD37cGEq2BJs7DxRTKYuCGeJYTniLksEP9JeRulvn1OMyTZZB+/zRBfCT9w==
 
 react-device-detect@^2.2.2:
   version "2.2.2"

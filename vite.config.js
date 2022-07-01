@@ -5,7 +5,7 @@ import prismjs from 'vite-plugin-prismjs';
 
 export default defineConfig({
   esbuild: {
-    // drop: ['console'],
+    drop: ['console'],
   },
   plugins: [
     react(),
