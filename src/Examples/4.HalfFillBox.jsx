@@ -1,4 +1,4 @@
-import { Star, Rating } from 'react-advanced-rating';
+import { Star, Rating } from '@smastrom/react-rating';
 
 const customStyles = {
   itemShapes: Star,
@@ -37,7 +37,7 @@ export const HalfFillBox = () => (
 
 export const HalfFillBoxCode = `
 
-import { Star } from "react-advanced-rating";
+import { Star } from "@smastrom/react-rating";
 
 const customStyles = {
   itemShapes: Star,

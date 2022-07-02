@@ -326,6 +326,11 @@
     estree-walker "^2.0.1"
     picomatch "^2.2.2"
 
+"@smastrom/react-rating@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@smastrom/react-rating/-/react-rating-1.0.0.tgz#d7b4fddd40d86ec854c78bbdf5f727dc93fcf5ea"
+  integrity sha512-RCVAlggjfjqYl81X4FDvogkFOKd4rZWIXv013wk9lcrfps+ssa8HsVPNsWb64JTFuta/HuDLTELG9hOdexx0WA==
+
 "@types/js-cookie@^2.x.x":
   version "2.2.7"
   resolved "https://registry.yarnpkg.com/@types/js-cookie/-/js-cookie-2.2.7.tgz#226a9e31680835a6188e887f3988e60c04d3f6a3"
@@ -1839,11 +1844,6 @@ punycode@^2.1.0:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
   integrity sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
-
-react-advanced-rating@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/react-advanced-rating/-/react-advanced-rating-1.0.0.tgz#15b062eee016b72a72599e07d77882705d6c5a32"
-  integrity sha512-wH1a4Yit0lyDyrCTjOXFoo85r4VsD37cGEq2BJs7DxRTKYuCGeJYTniLksEP9JeRulvn1OMyTZZB+/zRBfCT9w==
 
 react-device-detect@^2.2.2:
   version "2.2.2"

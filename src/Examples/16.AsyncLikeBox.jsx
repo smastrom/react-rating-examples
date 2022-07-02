@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { Rating } from 'react-advanced-rating';
+import { Rating } from '@smastrom/react-rating';
 
 const Heart = (
   <path

@@ -36,11 +36,11 @@ const Nav = styled('nav')`
     position: sticky;
     content: '';
     width: 100%;
-    z-index: 10;
+    z-index: 20;
     display: block;
-    height: 60px;
+    height: 40px;
     bottom: 0;
-    background: linear-gradient(to bottom, var(--transparent-color) 25%, white 75%);
+    background: linear-gradient(to bottom, var(--transparent-color) 25%, white 100%);
   }
 
   &::-webkit-scrollbar {
@@ -134,7 +134,7 @@ const ReadOnlySpan = styled('span')`
 export const Sidebar = ({ intersectionData }) => {
   const [location] = useHashLocation();
 
-  useTitle(`${intersectionData.title} — React Advanced Rating`, { restoreOnUnmount: true });
+  useTitle(`${intersectionData.title} — React Rating`, { restoreOnUnmount: true });
 
   useUpdateScroll(() => {
     console.log('Hello from useUpdateScroll @ Sidebar.jsx');

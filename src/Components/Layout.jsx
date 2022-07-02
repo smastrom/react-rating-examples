@@ -23,7 +23,7 @@ const Container = styled('div')`
 
   @media (min-width: 768px) {
     --padding: 20px;
-    height: calc(100vh - var(var(--padding) * 2));
+    height: calc(100vh - calc(var(--padding) * 2));
   }
 
   @media (min-width: 1536px) {

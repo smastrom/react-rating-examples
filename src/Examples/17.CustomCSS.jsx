@@ -1,4 +1,4 @@
-import { Rating } from 'react-advanced-rating';
+import { Rating } from '@smastrom/react-rating';
 
 import './17.CustomCSS.css';
 

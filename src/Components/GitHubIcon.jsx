@@ -1,5 +1,5 @@
 export const githubLinkProps = {
-  href: 'https://github.com/smastrom/react-advanced-rating',
+  href: 'https://github.com/smastrom/react-rating',
   'aria-label': 'Visit GitHub repository',
   rel: 'noreferrer',
   target: '_blank',

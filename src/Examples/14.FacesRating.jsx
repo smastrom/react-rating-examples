@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { Rating } from 'react-advanced-rating';
+import { Rating } from '@smastrom/react-rating';
 
 // Collection source: https://www.svgrepo.com/collection/fluent-ui-icons-outlined
 

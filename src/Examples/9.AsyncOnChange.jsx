@@ -1,7 +1,7 @@
 /* eslint-disable no-promise-executor-return */
 import { useState } from 'react';
 
-import { Rating } from 'react-advanced-rating';
+import { Rating } from '@smastrom/react-rating';
 
 export const WithAsyncOp = () => {
   const [ratingValue, setRatingValue] = useState(0);

@@ -1,4 +1,4 @@
-import { Rating } from 'react-advanced-rating';
+import { Rating } from '@smastrom/react-rating';
 
 export const HalfFillSVG = () => (
   <div style={{ display: 'flex', gap: '50px', alignItems: 'center' }}>

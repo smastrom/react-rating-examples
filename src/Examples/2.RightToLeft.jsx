@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { Star, Rating } from 'react-advanced-rating';
+import { Star, Rating } from '@smastrom/react-rating';
 
 const customStyles = {
   itemShapes: Star,

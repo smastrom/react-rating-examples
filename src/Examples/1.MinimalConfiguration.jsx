@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { Rating } from 'react-advanced-rating';
+import { Rating } from '@smastrom/react-rating';
 
 export const MinimalConfiguration = () => {
   const [width, setWidth] = useState(200);

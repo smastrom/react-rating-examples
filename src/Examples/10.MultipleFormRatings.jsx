@@ -1,7 +1,7 @@
 /* eslint-disable no-alert */
 import { useState } from 'react';
 
-import { Rating } from 'react-advanced-rating';
+import { Rating } from '@smastrom/react-rating';
 
 export const MultipleFormRatings = () => {
   const [formData, setFormData] = useState({

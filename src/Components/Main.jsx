@@ -103,7 +103,7 @@ const Container = styled('main')`
     background: linear-gradient(to bottom, var(--transparent-color) 25%, #f3f4f6 75%);
 
     @media (min-width: 768px) {
-      bottom: 30px;
+      bottom: 20px;
     }
   }
 `;

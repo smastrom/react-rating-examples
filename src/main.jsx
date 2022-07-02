@@ -6,7 +6,7 @@ import { shouldForwardProp } from 'goober/should-forward-prop';
 
 import { App } from './App';
 
-import 'react-advanced-rating/dist/index.min.css';
+import '@smastrom/react-rating/style.css';
 import './sharedStyles/fonts.css';
 
 setup(
