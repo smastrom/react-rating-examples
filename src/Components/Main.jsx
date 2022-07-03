@@ -98,13 +98,9 @@ const Container = styled('main')`
     width: 100%;
     z-index: 5;
     display: block;
-    height: 60px;
-    bottom: 15px;
+    height: 80px;
+    bottom: 0px;
     background: linear-gradient(to bottom, var(--transparent-color) 25%, #f3f4f6 75%);
-
-    @media (min-width: 768px) {
-      bottom: 20px;
-    }
   }
 `;
 
