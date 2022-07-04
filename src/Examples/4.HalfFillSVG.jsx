@@ -4,7 +4,7 @@ export const HalfFillSVG = () => (
   <div style={{ display: 'flex', gap: '50px', alignItems: 'center' }}>
     <div
       style={{
-        maxWidth: 200,
+        maxWidth: 180,
         width: '100%',
       }}
     >
@@ -24,7 +24,7 @@ export const HalfFillSVG = () => (
 export const HalfFillSVGCode = `
 const App = () => (
   <div>
-    <div style={{ maxWidth: 200, width: '100%' }}>
+    <div style={{ maxWidth: 180, width: '100%' }}>
       <Rating readOnly value={0.29} />
       <Rating readOnly value={1.44} />
       <Rating readOnly value={2.31} />

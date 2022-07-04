@@ -8,7 +8,7 @@ export const ResetButton = () => {
   return (
     <div
       style={{
-        maxWidth: 200,
+        maxWidth: 180,
         width: '100%',
         display: 'flex',
         gap: '20px',
@@ -19,6 +19,7 @@ export const ResetButton = () => {
       <Rating
         value={ratingValue}
         onChange={(selectedValue) => setRatingValue(selectedValue)}
+        spaceBetween="none"
       />
       <button
         type="button"
@@ -43,7 +44,7 @@ const App = () => {
   const [ratingValue, setRatingValue] = useState(3);
 
   return (
-    <div style={{ maxWidth: 200, width: '100%' }}>
+    <div style={{ maxWidth: 180, width: '100%' }}>
       <Rating
         value={ratingValue}
         onChange={(selectedValue) => setRatingValue(selectedValue)}

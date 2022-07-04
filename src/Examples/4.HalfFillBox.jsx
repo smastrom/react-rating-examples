@@ -11,25 +11,56 @@ export const HalfFillBox = () => (
   <div style={{ display: 'flex', gap: '50px', alignItems: 'center' }}>
     <div
       style={{
-        maxWidth: 200,
+        maxWidth: 180,
         width: '100%',
         display: 'grid',
-        gap: 10,
+        gap: 5,
       }}
     >
-      <Rating readOnly value={0.29} itemStyles={customStyles} halfFillMode="box" />
-      <Rating readOnly value={1.44} itemStyles={customStyles} halfFillMode="box" />
-      <Rating readOnly value={2.31} itemStyles={customStyles} halfFillMode="box" />
-      <Rating readOnly value={3.48} itemStyles={customStyles} halfFillMode="box" />
-      <Rating readOnly value={4.52} itemStyles={customStyles} halfFillMode="box" />
+      <Rating
+        readOnly
+        value={0.29}
+        itemStyles={customStyles}
+        spaceBetween="small"
+        halfFillMode="box"
+      />
+      <Rating
+        readOnly
+        value={1.44}
+        itemStyles={customStyles}
+        spaceBetween="small"
+        halfFillMode="box"
+      />
+      <Rating
+        readOnly
+        value={2.31}
+        itemStyles={customStyles}
+        spaceBetween="small"
+        halfFillMode="box"
+      />
+      <Rating
+        readOnly
+        value={3.48}
+        itemStyles={customStyles}
+        spaceBetween="small"
+        halfFillMode="box"
+      />
+      <Rating
+        readOnly
+        value={4.52}
+        itemStyles={customStyles}
+        spaceBetween="small"
+        halfFillMode="box"
+      />
     </div>
-    <div style={{ maxWidth: 35, width: '100%' }}>
+    <div style={{ maxWidth: 30, width: '100%' }}>
       <Rating
         readOnly
         value={4.52}
         itemStyles={customStyles}
         orientation="vertical"
         halfFillMode="box"
+        spaceBetween="small"
       />
     </div>
   </div>
@@ -48,20 +79,21 @@ const customStyles = {
 
 const App = () => (
   <div>
-    <div style={{ maxWidth: 200, width: '100%' }}>
-      <Rating readOnly value={0.29} itemStyles={customStyles} halfFillMode="box" />
-      <Rating readOnly value={1.44} itemStyles={customStyles} halfFillMode="box" />
-      <Rating readOnly value={2.31} itemStyles={customStyles} halfFillMode="box" />
-      <Rating readOnly value={3.48} itemStyles={customStyles} halfFillMode="box" />
-      <Rating readOnly value={4.52} itemStyles={customStyles} halfFillMode="box" />
+    <div style={{ maxWidth: 180, width: '100%' }}>
+      <Rating readOnly value={0.29} itemStyles={customStyles} spaceBetween="small" halfFillMode="box" />
+      <Rating readOnly value={1.44} itemStyles={customStyles} spaceBetween="small" halfFillMode="box" />
+      <Rating readOnly value={2.31} itemStyles={customStyles} spaceBetween="small" halfFillMode="box" />
+      <Rating readOnly value={3.48} itemStyles={customStyles} spaceBetween="small" halfFillMode="box" />
+      <Rating readOnly value={4.52} itemStyles={customStyles} spaceBetween="small" halfFillMode="box" />
     </div>
-    <div style={{ maxWidth: 35, width: '100%' }}>
+    <div style={{ maxWidth: 30, width: '100%' }}>
       <Rating
         readOnly
         value={4.52}
         itemStyles={customStyles}
         orientation="vertical"
         halfFillMode="box"
+        spaceBetween="small"
       />
     </div>
   </div>

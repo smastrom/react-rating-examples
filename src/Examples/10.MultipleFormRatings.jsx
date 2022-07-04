@@ -22,7 +22,7 @@ export const MultipleFormRatings = () => {
         border: '2px solid #9CA3AF',
         padding: '20px',
         borderRadius: '10px',
-        maxWidth: 200,
+        maxWidth: 180,
         width: '100%',
         display: 'flex',
         flexDirection: 'column',
@@ -111,7 +111,7 @@ const App = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      maxWidth: 200,
+      maxWidth: 180,
       width: '100%',
     >
       <label htmlFor="name">

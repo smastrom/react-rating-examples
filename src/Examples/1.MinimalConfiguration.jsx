@@ -2,8 +2,10 @@ import { useState } from 'react';
 
 import { Rating } from '@smastrom/react-rating';
 
+const initialValue = 180;
+
 export const MinimalConfiguration = () => {
-  const [width, setWidth] = useState(200);
+  const [width, setWidth] = useState(initialValue);
   const [ratingValue, setRatingValue] = useState(3);
 
   return (
@@ -28,7 +30,7 @@ export const MinimalConfiguration = () => {
         <input
           style={{ width: 150 }}
           type="range"
-          min="200"
+          min={initialValue}
           max="500"
           step="1"
           onChange={(e) => setWidth(e.target.value)}
@@ -43,7 +45,7 @@ const App = () => {
   const [ratingValue, setRatingValue] = useState(3);
 
   return (
-    <div style={{ maxWidth: 200, width: "100%" }}>
+    <div style={{ maxWidth: 180, width: "100%" }}>
       <Rating
         value={ratingValue}
         onChange={(selectedValue) => setRatingValue(selectedValue)}

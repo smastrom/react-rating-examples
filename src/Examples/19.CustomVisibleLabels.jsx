@@ -36,10 +36,10 @@ export const CustomVisibleLabels = () => {
         value={ratingValue}
         itemStyles={customStyles}
         onChange={(selectedValue) => setRatingValue(selectedValue)}
-        spaceBetween="medium"
-        spaceInside="medium"
         visibleLabelId={CUSTOM_GROUP_LABEL_ID}
         visibleItemLabelIds={CUSTOM_ITEM_LABELS_IDS}
+        spaceBetween="medium"
+        spaceInside="medium"
       />
 
       <div
@@ -82,7 +82,7 @@ const App = () => {
   const [ratingValue, setRatingValue] = useState(4);
 
   return (
-    <div role="group">
+    <div role="group", style={{ maxWidth: 450, width: '100%' }}>
       <h2 id={CUSTOM_GROUP_LABEL_ID}>{CUSTOM_GROUP_LABEL}</h2>
       <Rating
         value={ratingValue}
@@ -90,6 +90,8 @@ const App = () => {
         onChange={(selectedValue) => setRatingValue(selectedValue)}
         visibleLabelId={CUSTOM_GROUP_LABEL_ID}
         visibleItemLabelIds={CUSTOM_ITEM_LABELS_IDS}
+        spaceBetween="medium"
+        spaceInside="medium"
       />
       <div
         style={{

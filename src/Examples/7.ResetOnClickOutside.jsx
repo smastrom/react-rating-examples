@@ -24,7 +24,7 @@ export const ResetOnClickOutside = () => {
   return (
     <div
       style={{
-        maxWidth: 200,
+        maxWidth: 180,
         width: '100%',
       }}
     >
@@ -58,7 +58,7 @@ const App = () => {
   }, [ratingValue]);
 
   return (
-    <div style={{ maxWidth: 200, width: '100%' }}>
+    <div style={{ maxWidth: 180, width: '100%' }}>
       <Rating
         ref={ratingRef}
         value={ratingValue}

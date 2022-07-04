@@ -8,7 +8,7 @@ export const ResetOnSecondClick = () => {
   return (
     <div
       style={{
-        maxWidth: 200,
+        maxWidth: 180,
         width: '100%',
       }}
     >
@@ -28,7 +28,7 @@ const App = () => {
   // Click again on the item just selected
   
   return (
-    <div style={{ maxWidth: 200, width: '100%' }}>
+    <div style={{ maxWidth: 180, width: '100%' }}>
       <Rating
         value={ratingValue}
         onChange={(selectedValue) => setRatingValue(selectedValue)}

@@ -23,7 +23,7 @@ export const CustomMixesLabels = () => {
       role="group"
       style={{
         textAlign: 'center',
-        maxWidth: 450,
+        maxWidth: 400,
         width: '100%',
       }}
     >
@@ -34,10 +34,10 @@ export const CustomMixesLabels = () => {
         value={ratingValue}
         itemStyles={customStyles}
         onChange={(selectedValue) => setRatingValue(selectedValue)}
-        spaceBetween="medium"
-        spaceInside="medium"
         visibleLabelId={CUSTOM_GROUP_LABEL_ID}
         invisibleItemLabels={CUSTOM_ITEM_LABELS}
+        spaceBetween="small"
+        spaceInside="medium"
       />
     </div>
   );
@@ -54,7 +54,7 @@ const App = () => {
   const [ratingValue, setRatingValue] = useState(0);
 
   return (
-    <div role="group">
+    <div role="group" style={{ maxWidth: 400, width: 100% }}>
       <h2 id={CUSTOM_GROUP_LABEL_ID}>{CUSTOM_GROUP_LABEL}</h2>
       <Rating
         value={ratingValue}
@@ -62,6 +62,8 @@ const App = () => {
         onChange={(selectedValue) => setRatingValue(selectedValue)}
         visibleLabelId={CUSTOM_GROUP_LABEL_ID}
         invisibleItemLabels={CUSTOM_ITEM_LABELS}
+        spaceBetween="small"
+        spaceInside="medium"
       />
     </div>
   );

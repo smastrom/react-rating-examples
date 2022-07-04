@@ -28,7 +28,7 @@ export const WithAsyncOp = () => {
   return (
     <div
       style={{
-        maxWidth: 200,
+        maxWidth: 180,
         width: '100%',
         display: 'flex',
         flexDirection: 'column',
@@ -100,7 +100,7 @@ const App = () => {
   };
   
   return (
-    <div style={{ maxWidth: 200, width: '100%' }}>
+    <div style={{ maxWidth: 180, width: '100%' }}>
       <Rating
         readOnly={isReadOnly}
         value={ratingValue}

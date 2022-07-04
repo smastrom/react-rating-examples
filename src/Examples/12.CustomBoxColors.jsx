@@ -37,6 +37,7 @@ export const CustomBoxColors = () => {
         transition="position"
         radius="medium"
         spaceInside="large"
+        spaceBetween="small"
       />
     </div>
   );
@@ -73,6 +74,7 @@ const App = () => {
         transition="position"
         radius="medium"
         spaceInside="large"
+        spaceBetween="small"
       />
     </div>
   );

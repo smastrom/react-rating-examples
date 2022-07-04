@@ -27,11 +27,11 @@ export const CustomInvisibleLabels = () => {
         value={ratingValue}
         itemStyles={customStyles}
         onChange={(selectedValue) => setRatingValue(selectedValue)}
+        invisibleLabel={CUSTOM_GROUP_LABEL}
+        invisibleItemLabels={CUSTOM_ITEM_LABELS}
         spaceBetween="small"
         spaceInside="medium"
         transition="none"
-        invisibleLabel={CUSTOM_GROUP_LABEL}
-        invisibleItemLabels={CUSTOM_ITEM_LABELS}
       />
     </div>
   );
@@ -52,6 +52,9 @@ const App = () => {
         onChange={(selectedValue) => setRatingValue(selectedValue)}
         invisibleLabel={CUSTOM_GROUP_LABEL}
         invisibleItemLabels={CUSTOM_ITEM_LABELS}
+        spaceBetween="small"
+        spaceInside="medium"
+        transition="none"
       />
     </div>
   );

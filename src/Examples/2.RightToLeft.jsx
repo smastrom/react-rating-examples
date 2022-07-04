@@ -16,7 +16,7 @@ export const RightToLeft = () => {
     <div
       dir="rtl"
       style={{
-        maxWidth: 200,
+        maxWidth: 180,
         width: '100%',
         display: 'grid',
         gap: 20,
@@ -31,7 +31,13 @@ export const RightToLeft = () => {
         {`Selected value: ${ratingValue}`}
       </div>
       <Rating readOnly value={2.42} />
-      <Rating readOnly value={3.52} halfFillMode="box" itemStyles={customStyles} />
+      <Rating
+        readOnly
+        value={3.52}
+        halfFillMode="box"
+        itemStyles={customStyles}
+        spaceBetween="small"
+      />
     </div>
   );
 };
@@ -41,7 +47,7 @@ const App = () => {
   const [ratingValue, setRatingValue] = useState(2);
 
   return (
-    <div dir="rtl" style={{ maxWidth: 200, width: '100%' }}>
+    <div dir="rtl" style={{ maxWidth: 180, width: '100%' }}>
       <div>
         <Rating
           value={ratingValue}
@@ -51,7 +57,13 @@ const App = () => {
         {\`Selected value: \${ratingValue}\`}
       </div>
       <Rating readOnly value={2.42} />
-      <Rating readOnly value={3.52} halfFillMode="box" itemStyles={customStyles} />
+      <Rating
+        readOnly
+        value={3.52}
+        halfFillMode="box"
+        itemStyles={customStyles}
+        spaceBetween="small"
+      />
     </div>
   );
 };`;

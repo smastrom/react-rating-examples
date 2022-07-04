@@ -326,10 +326,10 @@
     estree-walker "^2.0.1"
     picomatch "^2.2.2"
 
-"@smastrom/react-rating@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@smastrom/react-rating/-/react-rating-1.0.0.tgz#d7b4fddd40d86ec854c78bbdf5f727dc93fcf5ea"
-  integrity sha512-RCVAlggjfjqYl81X4FDvogkFOKd4rZWIXv013wk9lcrfps+ssa8HsVPNsWb64JTFuta/HuDLTELG9hOdexx0WA==
+"@smastrom/react-rating@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@smastrom/react-rating/-/react-rating-1.0.1.tgz#76fe3e4aa948a16dc3941e2e4a6cbb3e3388d539"
+  integrity sha512-yXF+zG8zlLB9aKaYkRWVZ8J7Lr78OVaf1XjOn5/bv1I9BEWtblnWN2RRPycMNOBuo4LObp77dVtsL1VyjPTxxw==
 
 "@types/js-cookie@^2.x.x":
   version "2.2.7"

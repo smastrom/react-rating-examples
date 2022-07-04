@@ -26,7 +26,7 @@ export const WithCustomFeedback = () => {
   return (
     <div
       style={{
-        maxWidth: 200,
+        maxWidth: 180,
         width: '100%',
         display: 'flex',
         justifyItems: 'center',
@@ -80,7 +80,7 @@ const App = () => {
 
   return (
     <div>
-      <div style={{ maxWidth: 200, width: '100%' }}>
+      <div style={{ maxWidth: 180, width: '100%' }}>
         <Rating
           value={ratingValue}
           onChange={(selectedValue) => setRatingValue(selectedValue)}
