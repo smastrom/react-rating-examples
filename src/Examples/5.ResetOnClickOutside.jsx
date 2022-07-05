@@ -22,18 +22,14 @@ export const ResetOnClickOutside = () => {
   }, [ratingValue]);
 
   return (
-    <div
+    <Rating
       style={{
         maxWidth: 180,
-        width: '100%',
       }}
-    >
-      <Rating
-        ref={ratingRef}
-        value={ratingValue}
-        onChange={(selectedValue) => setRatingValue(selectedValue)}
-      />
-    </div>
+      ref={ratingRef}
+      value={ratingValue}
+      onChange={(selectedValue) => setRatingValue(selectedValue)}
+    />
   );
 };
 
@@ -58,12 +54,11 @@ const App = () => {
   }, [ratingValue]);
 
   return (
-    <div style={{ maxWidth: 180, width: '100%' }}>
-      <Rating
-        ref={ratingRef}
-        value={ratingValue}
-        onChange={(selectedValue) => setRatingValue(selectedValue)}
-      />
-    </div>
+    <Rating
+      style={{ maxWidth: 180 }}
+      ref={ratingRef}
+      value={ratingValue}
+      onChange={(selectedValue) => setRatingValue(selectedValue)}
+    />
   );
 };`;

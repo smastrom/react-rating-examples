@@ -225,13 +225,13 @@ export const Main = ({ setIntersectionData }) => {
         </HeaderContent>
         <HeaderGradient />
       </MobileHeader>
-      {examples.map(({ id, title, code, jsx, hasCSS, cssCode }, index) => (
+      {examples.map(({ id, title, code, jsx, hasCSS, cssCode, isReadOnly }, index) => (
         <Example
           key={id}
           id={id}
+          title={title === 'Basic usage' && isReadOnly ? `${title} - Read only` : title}
           // eslint-disable-next-line no-return-assign
           ref={(child) => (sectionRefs.current[index] = child)}
-          title={title}
           code={code}
           jsx={jsx}
           hasCSS={hasCSS}

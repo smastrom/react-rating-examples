@@ -40,23 +40,19 @@ export const FacesRating = () => {
   const [ratingValue, setRatingValue] = useState(0);
 
   return (
-    <div
+    <Rating
       style={{
         maxWidth: 300,
-        width: '100%',
       }}
-    >
-      <Rating
-        value={ratingValue}
-        onChange={(selectedValue) => setRatingValue(selectedValue)}
-        itemStyles={customStyles}
-        items={4}
-        highlightOnlySelected
-        resetOnSecondClick
-        spaceBetween="medium"
-        transition="zoom"
-      />
-    </div>
+      value={ratingValue}
+      onChange={(selectedValue) => setRatingValue(selectedValue)}
+      itemStyles={customStyles}
+      items={4}
+      highlightOnlySelected
+      resetOnSecondClick
+      spaceBetween="medium"
+      transition="zoom"
+    />
   );
 };
 
@@ -99,17 +95,16 @@ const App = () => {
   const [ratingValue, setRatingValue] = useState(0);
 
   return (
-    <div style={{ maxWidth: 300, width: '100%' }}>
-      <Rating
-        value={ratingValue}
-        onChange={(selectedValue) => setRatingValue(selectedValue)}
-        itemStyles={customStyles}
-        items={4}
-        highlightOnlySelected
-        resetOnSecondClick
-        spaceBetween="medium"
-        transition="zoom"
-      />
-    </div>
+    <Rating
+      style={{ maxWidth: 300 }}
+      value={ratingValue}
+      onChange={(selectedValue) => setRatingValue(selectedValue)}
+      itemStyles={customStyles}
+      items={4}
+      highlightOnlySelected
+      resetOnSecondClick
+      spaceBetween="medium"
+      transition="zoom"
+    />
   );
 };`;

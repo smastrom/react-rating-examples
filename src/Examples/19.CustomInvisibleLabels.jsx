@@ -17,23 +17,19 @@ export const CustomInvisibleLabels = () => {
   const [ratingValue, setRatingValue] = useState(0);
 
   return (
-    <div
+    <Rating
       style={{
-        maxWidth: 300,
-        width: '100%',
+        maxWidth: 200,
       }}
-    >
-      <Rating
-        value={ratingValue}
-        itemStyles={customStyles}
-        onChange={(selectedValue) => setRatingValue(selectedValue)}
-        invisibleLabel={CUSTOM_GROUP_LABEL}
-        invisibleItemLabels={CUSTOM_ITEM_LABELS}
-        spaceBetween="small"
-        spaceInside="medium"
-        transition="none"
-      />
-    </div>
+      value={ratingValue}
+      itemStyles={customStyles}
+      onChange={(selectedValue) => setRatingValue(selectedValue)}
+      invisibleLabel={CUSTOM_GROUP_LABEL}
+      invisibleItemLabels={CUSTOM_ITEM_LABELS}
+      spaceBetween="small"
+      spaceInside="medium"
+      transition="none"
+    />
   );
 };
 
@@ -45,17 +41,16 @@ const App = () => {
   const [ratingValue, setRatingValue] = useState(0);
 
   return (
-    <div style={{ maxWidth: 300, width: '100%' }}>
-      <Rating
-        value={ratingValue}
-        itemStyles={customStyles}
-        onChange={(selectedValue) => setRatingValue(selectedValue)}
-        invisibleLabel={CUSTOM_GROUP_LABEL}
-        invisibleItemLabels={CUSTOM_ITEM_LABELS}
-        spaceBetween="small"
-        spaceInside="medium"
-        transition="none"
-      />
-    </div>
+    <Rating
+      style={{ maxWidth: 200 }}
+      value={ratingValue}
+      itemStyles={customStyles}
+      onChange={(selectedValue) => setRatingValue(selectedValue)}
+      invisibleLabel={CUSTOM_GROUP_LABEL}
+      invisibleItemLabels={CUSTOM_ITEM_LABELS}
+      spaceBetween="small"
+      spaceInside="medium"
+      transition="none"
+    />
   );
 };`;

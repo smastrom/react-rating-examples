@@ -15,9 +15,7 @@ export const HalfFillSVG = () => (
       <Rating readOnly value={4.52} />
     </div>
 
-    <div style={{ maxWidth: 30, width: '100%' }}>
-      <Rating readOnly orientation="vertical" value={4.52} />
-    </div>
+    <Rating style={{ maxWidth: 30 }} readOnly orientation="vertical" value={4.52} />
   </div>
 );
 
@@ -31,8 +29,10 @@ const App = () => (
       <Rating readOnly value={3.48} />
       <Rating readOnly value={4.52} />
     </div>
-    <div style={{ maxWidth: 30, width: '100%' }}>
-      <Rating readOnly orientation="vertical" value={4.52} />
-    </div>
+    <Rating
+      style={{ maxWidth: 30 }}
+      readOnly orientation="vertical"
+      value={4.52}
+    />
   </div>
 );`;

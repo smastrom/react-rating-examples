@@ -100,12 +100,11 @@ const App = () => {
   };
   
   return (
-    <div style={{ maxWidth: 180, width: '100%' }}>
-      <Rating
-        readOnly={isReadOnly}
-        value={ratingValue}
-        onChange={handleAsyncSubmission}
-      />
-    </div>
+    <Rating
+      style={{ maxWidth: 180 }}
+      readOnly={isReadOnly}
+      value={ratingValue}
+      onChange={handleAsyncSubmission}
+    />
   );
 };`;

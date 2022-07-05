@@ -1,6 +1,6 @@
 import { Rating } from '@smastrom/react-rating';
 
-import './17.CustomCSS.css';
+import './22.CustomCSS.css';
 
 const customStyles = {
   itemShapes: (
@@ -9,64 +9,57 @@ const customStyles = {
 };
 
 export const CustomCSS = () => (
-  <div className="container">
-    <Rating
-      readOnly
-      value={3}
-      itemStyles={customStyles}
-      className="custom-classname"
-      transition="none"
-      spaceBetween="none"
-      spaceInside="none"
-      radius="none"
-    />
-  </div>
+  <Rating
+    readOnly
+    value={3}
+    itemStyles={customStyles}
+    className="custom-classname"
+    transition="none"
+    spaceBetween="none"
+    spaceInside="none"
+    radius="none"
+  />
 );
 
 export const CustomCSSCodeCSS = `
-.container {
+.custom-classname {
+  gap: 5px;
   max-width: 200px;
   width: 100%;
 }
-  
-.custom-classname {
-  gap: 5px;
-}
-  
+
 .custom-classname .rar--svg {
   padding: 5px;
   border-width: 1px;
   border-style: solid;
   border-radius: 4px;
 }
-  
+
 .custom-classname .rar--on .rar--svg {
   fill: MediumSeaGreen;
   background: MintCream;
   border-color: MediumSeaGreen;
 }
-  
+
 .custom-classname .rar--off .rar--svg {
   fill: Tomato;
   background: AntiqueWhite;
   border-color: Tomato;
 }
-  
+
 @media (min-width: 610px) {
-  .container {
-    max-width: 300px;
-  }
-  
   .custom-classname {
+    max-width: 300px;
     gap: 10px;
   }
-  
+
   .custom-classname .rar--svg {
     padding: 10px;
     border-width: 2px;
     border-radius: 10px;
   }
 }
+
 `;
 
 export const CustomCSSCode = `

@@ -50,25 +50,19 @@ export const LikeBoxAsync = () => {
 
   return (
     <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
-      <div
+      <Rating
         style={{
           maxWidth: 60,
-          width: '100%',
         }}
-      >
-        <Rating
-          readOnly={isReadOnly}
-          value={ratingValue}
-          onChange={handleAsyncLike}
-          itemStyles={customStyles}
-          items={1}
-          resetOnSecondClick
-          invisibleLabel="Like / Unlike this post"
-          invisibleItemLabels={[
-            `${ratingValue === 0 ? 'Like this post' : 'Unlike this post'}`,
-          ]}
-        />
-      </div>
+        readOnly={isReadOnly}
+        value={ratingValue}
+        onChange={handleAsyncLike}
+        itemStyles={customStyles}
+        items={1}
+        resetOnSecondClick
+        invisibleLabel="Like / Unlike this post"
+        invisibleItemLabels={[`${ratingValue === 0 ? 'Like this post' : 'Unlike this post'}`]}
+      />
       <div>
         {(status === 'Unliked' || status === 'Idle') &&
           ratingValue === 0 &&
@@ -124,19 +118,18 @@ const AsLikeBox = () => {
   };
 
   return (
-    <div style={{ maxWidth: 60, width: '100%' }}>
-      <Rating
-        readOnly={isReadOnly}
-        value={ratingValue}
-        onChange={handleAsyncLike}
-        itemStyles={customStyles}
-        items={1}
-        resetOnSecondClick
-        invisibleLabel="Like or Unlike this post"
-        invisibleItemLabels={[
-          \`\${ratingValue === 0 ? 'Like this post' : 'Unlike this post'}\`,
-        ]}
-      />
-    </div>
+    <Rating
+      style={{ maxWidth: 60 }}
+      readOnly={isReadOnly}
+      value={ratingValue}
+      onChange={handleAsyncLike}
+      itemStyles={customStyles}
+      items={1}
+      resetOnSecondClick
+      invisibleLabel="Like or Unlike this post"
+      invisibleItemLabels={[
+        \`\${ratingValue === 0 ? 'Like this post' : 'Unlike this post'}\`,
+      ]}
+    />
   );
 };`;

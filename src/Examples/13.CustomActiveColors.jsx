@@ -23,22 +23,18 @@ export const CustomActiveColors = () => {
   const [ratingValue, setRatingValue] = useState(4);
 
   return (
-    <div
+    <Rating
       style={{
         maxWidth: 500,
-        width: '100%',
       }}
-    >
-      <Rating
-        value={ratingValue}
-        onChange={(selectedValue) => setRatingValue(selectedValue)}
-        itemStyles={customStyles}
-        transition="zoom"
-        radius="large"
-        spaceBetween="small"
-        spaceInside="large"
-      />
-    </div>
+      value={ratingValue}
+      onChange={(selectedValue) => setRatingValue(selectedValue)}
+      itemStyles={customStyles}
+      transition="zoom"
+      radius="large"
+      spaceBetween="small"
+      spaceInside="large"
+    />
   );
 };
 
@@ -64,16 +60,15 @@ const App = () => {
   const [ratingValue, setRatingValue] = useState(4);
 
   return (
-    <div style={{ maxWidth: 500, width: '100%' }}>
-      <Rating
-        value={ratingValue}
-        onChange={(selectedValue) => setRatingValue(selectedValue)}
-        itemStyles={customStyles}
-        transition="zoom"
-        radius="large"
-        spaceBetween="small"
-        spaceInside="large"
-      />
-    </div>
+    <Rating
+      style={{ maxWidth: 500 }}
+      value={ratingValue}
+      onChange={(selectedValue) => setRatingValue(selectedValue)}
+      itemStyles={customStyles}
+      transition="zoom"
+      radius="large"
+      spaceBetween="small"
+      spaceInside="large"
+    />
   );
 };`;

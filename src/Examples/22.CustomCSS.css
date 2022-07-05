@@ -1,10 +1,7 @@
-.container {
-  max-width: 200px;
-  width: 100%;
-}
-
 .custom-classname {
   gap: 5px;
+  max-width: 200px;
+  width: 100%;
 }
 
 .custom-classname .rar--svg {
@@ -27,11 +24,8 @@
 }
 
 @media (min-width: 610px) {
-  .container {
-    max-width: 300px;
-  }
-
   .custom-classname {
+    max-width: 300px;
     gap: 10px;
   }
 

@@ -4,14 +4,13 @@ import { Rating } from '@smastrom/react-rating';
 
 const initialValue = 120;
 
-export const MinimalConfiguration = () => {
+export const BasicUsage = () => {
   const [width, setWidth] = useState(initialValue);
   const [ratingValue, setRatingValue] = useState(3);
 
   return (
     <div
       style={{
-        maxWidth: `${width}px`,
         width: '100%',
         display: 'flex',
         justifyItems: 'center',
@@ -20,6 +19,7 @@ export const MinimalConfiguration = () => {
       }}
     >
       <Rating
+        style={{ maxWidth: `${width}px` }}
         value={ratingValue}
         onChange={(selectedValue) => setRatingValue(selectedValue)}
       />
@@ -39,16 +39,15 @@ export const MinimalConfiguration = () => {
   );
 };
 
-export const MinimalConfigurationCode = `
+export const BasicUsageCode = `
 const App = () => {
   const [ratingValue, setRatingValue] = useState(3);
 
   return (
-    <div style={{ maxWidth: 180, width: "100%" }}>
-      <Rating
-        value={ratingValue}
-        onChange={(selectedValue) => setRatingValue(selectedValue)}
-      />
-    </div>
+    <Rating
+      style={{ maxWidth: 180 }}
+      value={ratingValue}
+      onChange={(selectedValue) => setRatingValue(selectedValue)}
+    />
   )
 };`;

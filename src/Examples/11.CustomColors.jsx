@@ -23,19 +23,15 @@ export const CustomSVGColors = () => {
   const [ratingValue, setRatingValue] = useState(4);
 
   return (
-    <div
+    <Rating
       style={{
         maxWidth: 300,
-        width: '100%',
       }}
-    >
-      <Rating
-        value={ratingValue}
-        onChange={(selectedValue) => setRatingValue(selectedValue)}
-        itemStyles={customStyles}
-        transition="zoom"
-      />
-    </div>
+      value={ratingValue}
+      onChange={(selectedValue) => setRatingValue(selectedValue)}
+      itemStyles={customStyles}
+      transition="zoom"
+    />
   );
 };
 
@@ -61,13 +57,12 @@ const App = () => {
   const [ratingValue, setRatingValue] = useState(4);
 
   return (
-    <div style={{ maxWidth: 300, width: '100%' }}>
-      <Rating
-        value={ratingValue}
-        onChange={(selectedValue) => setRatingValue(selectedValue)}
-        itemStyles={customStyles}
-        transition="zoom"
-      />
-    </div>
+    <Rating
+      style={{ maxWidth: 300 }}
+      value={ratingValue}
+      onChange={(selectedValue) => setRatingValue(selectedValue)}
+      itemStyles={customStyles}
+      transition="zoom"
+    />
   );
 };`;

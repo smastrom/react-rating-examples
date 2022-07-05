@@ -24,22 +24,18 @@ export const CustomBoxColors = () => {
   const [ratingValue, setRatingValue] = useState(4);
 
   return (
-    <div
+    <Rating
       style={{
         maxWidth: 360,
-        width: '100%',
       }}
-    >
-      <Rating
-        value={ratingValue}
-        onChange={(selectedValue) => setRatingValue(selectedValue)}
-        itemStyles={customStyles}
-        transition="position"
-        radius="medium"
-        spaceInside="large"
-        spaceBetween="small"
-      />
-    </div>
+      value={ratingValue}
+      onChange={(selectedValue) => setRatingValue(selectedValue)}
+      itemStyles={customStyles}
+      transition="position"
+      radius="medium"
+      spaceInside="large"
+      spaceBetween="small"
+    />
   );
 };
 
@@ -66,16 +62,15 @@ const App = () => {
   const [ratingValue, setRatingValue] = useState(4);
 
   return (
-    <div style={{ maxWidth: 360, width: '100%' }}>
-      <Rating
-        value={ratingValue}
-        onChange={(selectedValue) => setRatingValue(selectedValue)}
-        itemStyles={customStyles}
-        transition="position"
-        radius="medium"
-        spaceInside="large"
-        spaceBetween="small"
-      />
-    </div>
+    <Rating
+      style={{ maxWidth: 360 }}
+      value={ratingValue}
+      onChange={(selectedValue) => setRatingValue(selectedValue)}
+      itemStyles={customStyles}
+      transition="position"
+      radius="medium"
+      spaceInside="large"
+      spaceBetween="small"
+    />
   );
 };`;

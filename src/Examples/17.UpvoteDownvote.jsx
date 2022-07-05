@@ -24,28 +24,23 @@ export const UpVoteDownVote = () => {
 
   return (
     <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
-      <div
+      <Rating
         style={{
           maxWidth: 60,
-          width: '100%',
         }}
-      >
-        <Rating
-          value={ratingValue}
-          onChange={(selectedValue) => setRatingValue(selectedValue)}
-          itemStyles={customStyles}
-          items={2}
-          highlightOnlySelected
-          resetOnSecondClick
-          radius="full"
-          orientation="vertical"
-          spaceBetween="medium"
-          spaceInside="large"
-          invisibleLabel="Upvote or downvote this post"
-          invisibleItemLabels={['Upvote', 'Downvote']}
-        />
-      </div>
-      <div>{ratingValue === 0 && 'Upvote / Downvote'}</div>
+        value={ratingValue}
+        onChange={(selectedValue) => setRatingValue(selectedValue)}
+        itemStyles={customStyles}
+        items={2}
+        highlightOnlySelected
+        resetOnSecondClick
+        radius="full"
+        orientation="vertical"
+        spaceBetween="medium"
+        spaceInside="large"
+        invisibleLabel="Upvote or downvote this post"
+        invisibleItemLabels={['Upvote', 'Downvote']}
+      />
       <div>{ratingValue === 1 && 'Upvoted'}</div>
       <div>{ratingValue === 2 && 'Downvoted'}</div>
     </div>
@@ -76,23 +71,21 @@ const App = () => {
 
   return (
     <div>
-      <div style={{ maxWidth: 80, width: '100%' }}>
-        <Rating
-          value={ratingValue}
-          onChange={(selectedValue) => setRatingValue(selectedValue)}
-          itemStyles={customStyles}
-          items={2}
-          highlightOnlySelected
-          resetOnSecondClick
-          radius="full"
-          orientation="vertical"
-          spaceBetween="medium"
-          spaceInside="large"
-          invisibleLabel="Upvote or downvote this post"
-          invisibleItemLabels={['Upvote', 'Downvote']}
-        />
-      </div>
-      <div>{ratingValue === 0 && 'Upvote / Downvote'}</div>
+      <Rating
+        style={{ maxWidth: 60 }}
+        value={ratingValue}
+        onChange={(selectedValue) => setRatingValue(selectedValue)}
+        itemStyles={customStyles}
+        items={2}
+        highlightOnlySelected
+        resetOnSecondClick
+        radius="full"
+        orientation="vertical"
+        spaceBetween="medium"
+        spaceInside="large"
+        invisibleLabel="Upvote or downvote this post"
+        invisibleItemLabels={['Upvote', 'Downvote']}
+      />
       <div>{ratingValue === 1 && 'Upvoted'}</div>
       <div>{ratingValue === 2 && 'Downvoted'}</div>
     </div>

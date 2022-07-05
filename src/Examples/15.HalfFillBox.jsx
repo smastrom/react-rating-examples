@@ -53,16 +53,16 @@ export const HalfFillBox = () => (
         halfFillMode="box"
       />
     </div>
-    <div style={{ maxWidth: 30, width: '100%' }}>
-      <Rating
-        readOnly
-        value={4.52}
-        itemStyles={customStyles}
-        orientation="vertical"
-        halfFillMode="box"
-        spaceBetween="small"
-      />
-    </div>
+
+    <Rating
+      style={{ maxWidth: 30 }}
+      readOnly
+      value={4.52}
+      itemStyles={customStyles}
+      orientation="vertical"
+      halfFillMode="box"
+      spaceBetween="small"
+    />
   </div>
 );
 
@@ -86,15 +86,14 @@ const App = () => (
       <Rating readOnly value={3.48} itemStyles={customStyles} spaceBetween="small" halfFillMode="box" />
       <Rating readOnly value={4.52} itemStyles={customStyles} spaceBetween="small" halfFillMode="box" />
     </div>
-    <div style={{ maxWidth: 30, width: '100%' }}>
-      <Rating
-        readOnly
-        value={4.52}
-        itemStyles={customStyles}
-        orientation="vertical"
-        halfFillMode="box"
-        spaceBetween="small"
-      />
-    </div>
+    <Rating
+      style={{ maxWidth: 30 }}
+      readOnly
+      value={4.52}
+      itemStyles={customStyles}
+      orientation="vertical"
+      halfFillMode="box"
+      spaceBetween="small"
+    />
   </div>
 );`;

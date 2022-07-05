@@ -160,16 +160,14 @@ export const Sidebar = ({ intersectionData }) => {
       </Header>
       <Nav>
         <NavList>
-          {examples.map(({ id, title }) => (
+          {examples.map(({ id, title, isReadOnly }) => (
             <li key={id}>
               <NavLink
                 href={`#${id}`}
                 isIntersecting={intersectionData.id === id}
                 aria-current={intersectionData.id === id}
               >
-                {(title === 'Half-fill - Box' || title === 'Half-fill - SVG') && (
-                  <ReadOnlySpan>Read-only</ReadOnlySpan>
-                )}
+                {isReadOnly && <ReadOnlySpan>Read-only</ReadOnlySpan>}
 
                 {title}
               </NavLink>
