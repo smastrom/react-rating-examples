@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { Rating } from '@smastrom/react-rating';
 
-const initialValue = 180;
+const initialValue = 120;
 
 export const MinimalConfiguration = () => {
   const [width, setWidth] = useState(initialValue);
@@ -23,7 +23,6 @@ export const MinimalConfiguration = () => {
         value={ratingValue}
         onChange={(selectedValue) => setRatingValue(selectedValue)}
       />
-      <Rating readOnly value={3} />
 
       <div style={{ width: 150, marginTop: '30px', textAlign: 'center' }}>
         Container size
@@ -50,7 +49,6 @@ const App = () => {
         value={ratingValue}
         onChange={(selectedValue) => setRatingValue(selectedValue)}
       />
-      <Rating readOnly value={3} />
     </div>
   )
 };`;
