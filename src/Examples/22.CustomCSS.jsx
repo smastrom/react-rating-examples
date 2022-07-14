@@ -28,20 +28,20 @@ export const CustomCSSCodeCSS = `
   width: 100%;
 }
 
-.custom-classname .rar--svg {
+.custom-classname .rr--svg {
   padding: 5px;
   border-width: 1px;
   border-style: solid;
   border-radius: 4px;
 }
 
-.custom-classname .rar--on .rar--svg {
+.custom-classname .rr--on .rr--svg {
   fill: MediumSeaGreen;
   background: MintCream;
   border-color: MediumSeaGreen;
 }
 
-.custom-classname .rar--off .rar--svg {
+.custom-classname .rr--off .rr--svg {
   fill: Tomato;
   background: AntiqueWhite;
   border-color: Tomato;
@@ -53,7 +53,7 @@ export const CustomCSSCodeCSS = `
     gap: 10px;
   }
 
-  .custom-classname .rar--svg {
+  .custom-classname .rr--svg {
     padding: 10px;
     border-width: 2px;
     border-radius: 10px;
