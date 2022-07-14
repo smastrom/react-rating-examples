@@ -180,5 +180,4 @@ export const GlobalStyles = createGlobalStyles`
     [hidden] {
       display: none;
     }
-
 `;

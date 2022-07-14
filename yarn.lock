@@ -505,9 +505,10 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
-"@smastrom/react-rating@file:bun.tgz":
-  version "1.0.1"
-  resolved "file:bun.tgz#87908385a335e0d07d63cb681dea110905051f81"
+"@smastrom/react-rating@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@smastrom/react-rating/-/react-rating-1.0.2.tgz#57dedaefa07fc738d777fee9354b3249ffb0cf1a"
+  integrity sha512-R9ICrTncoPy7cEMMdgnWKNozzyR69yfnI0LukAkM+GTKvHkwxzpDYKftK/ZaoxduDaHcMF0Mmws04VpL5R7UWQ==
 
 "@types/js-cookie@^2.x.x":
   version "2.2.7"
