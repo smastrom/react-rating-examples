@@ -505,10 +505,10 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
-"@smastrom/react-rating@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@smastrom/react-rating/-/react-rating-1.0.2.tgz#57dedaefa07fc738d777fee9354b3249ffb0cf1a"
-  integrity sha512-R9ICrTncoPy7cEMMdgnWKNozzyR69yfnI0LukAkM+GTKvHkwxzpDYKftK/ZaoxduDaHcMF0Mmws04VpL5R7UWQ==
+"@smastrom/react-rating@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@smastrom/react-rating/-/react-rating-1.0.3.tgz#bf4680412568f8ea9b8ccc740f7d00b396d8dd0e"
+  integrity sha512-iNOepb0ZhikXhmCUdZhB4FKZeu+I5fychL2Z1Uk2iMADkRTec2ixnyeT6kPZEqxgJ8FdvegxwyCtSovq7lLDsA==
 
 "@types/js-cookie@^2.x.x":
   version "2.2.7"
